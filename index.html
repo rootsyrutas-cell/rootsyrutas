@@ -1509,7 +1509,9 @@ footer {
 .acc-item.acc-open .acc-body { max-height:1800px; }
 .acc-body-inner { padding:4px 16px 36px; }
 .acc-tagline { font-size:16px; color:rgba(13,26,28,0.72); line-height:1.75; margin-bottom:14px; font-style:italic; }
-.acc-body-inner .service-includes li strong { color:var(--deep); font-weight:700; }
+.acc-body-inner .service-includes li { flex-direction:column; gap:2px; }
+.acc-body-inner .service-includes li strong { color:var(--deep); font-weight:700; display:block; font-size:15px; }
+.acc-body-inner .service-includes .si-desc { color:rgba(13,26,28,0.62); font-size:15px; line-height:1.55; padding-left:1px; }
 .acc-includes { font-size:13px; color:var(--mid); margin-bottom:18px; padding:9px 14px; background:rgba(13,26,28,0.03); border-left:3px solid var(--teal); border-radius:0 3px 3px 0; }
 @media(max-width:600px){.acc-header{flex-direction:column;align-items:flex-start;gap:8px;}.acc-meta{width:100%;justify-content:space-between;}.acc-price{font-size:13px;}}
 </style>
@@ -1912,9 +1914,9 @@ footer {
             <p class="acc-tagline">Let's ensure your story shines — so you can map your path, land the opportunity, and build a foundation that lasts.</p>
             <div class="acc-includes">Includes: 60-minute intensive strategy session + 1 deep-dive email review of your materials</div>
             <ul class="service-includes">
-              <li><strong>The Pipeline Audit</strong> &mdash; Your collegiate roadmap. End-to-end strategy for landing competitive internships, scholarships, and fellowships.</li>
-              <li><strong>The First-Job Blueprint</strong> &mdash; The financial foundation you wish you had. Learn to negotiate your benefits, optimize your 401k/HSAs, crush debt, fund your Roth, and master conscious spending.</li>
-              <li><strong>Freedom Fund Architecture</strong> &mdash; Calculate your financial starting line. We&rsquo;ll map your unique &ldquo;Coast FI&rdquo; milestone to ensure your early efforts buy you total freedom later.</li>
+              <li><strong>The Pipeline Audit</strong><span class="si-desc">Your collegiate roadmap. End-to-end strategy for landing competitive internships, scholarships, and fellowships.</span></li>
+              <li><strong>The First-Job Blueprint</strong><span class="si-desc">The financial foundation you wish you had. Learn to negotiate your benefits, optimize your 401k/HSAs, crush debt, fund your Roth, and master conscious spending.</span></li>
+              <li><strong>Freedom Fund Architecture</strong><span class="si-desc">Calculate your financial starting line. We&rsquo;ll map your unique &ldquo;Coast FI&rdquo; milestone to ensure your early efforts buy you total freedom later.</span></li>
             </ul>
             <a class="btn-book" href="https://calendly.com" target="_blank">&#128197; Book El Launchpad</a>
           </div>
@@ -1941,9 +1943,9 @@ footer {
             <p class="acc-tagline">Whether you are pursuing a new career, or launching a consultancy, we ensure your next step honors your history and fuels your future.</p>
             <div class="acc-includes">Includes: 3 &times; 60-minute intensive strategy sessions + 2 weeks of asynchronous support</div>
             <ul class="service-includes">
-              <li><strong>Fellowship &amp; Post-Grad Strategy</strong> &mdash; Elite execution for high-stakes programs (e.g., Fulbright, Rhodes) and competitive admissions.</li>
-              <li><strong>Tu Ruta: Career Navigation</strong> &mdash; Rooted in identity, designed for your trajectory. Comprehensive career navigation, expert resume architecture, and a strategic pivot roadmap.</li>
-              <li><strong>The Consultant Pivot</strong> &mdash; Monetize your &ldquo;hidden labor.&rdquo; We audit your core competencies, including translation and cross-cultural skills, to turn your vision into a profitable, independent path.</li>
+              <li><strong>Fellowship &amp; Post-Grad Strategy</strong><span class="si-desc">Elite execution for high-stakes programs (e.g., Fulbright, Rhodes) and competitive admissions.</span></li>
+              <li><strong>Tu Ruta: Career Navigation</strong><span class="si-desc">Rooted in identity, designed for your trajectory. Comprehensive career navigation, expert resume architecture, and a strategic pivot roadmap.</span></li>
+              <li><strong>The Consultant Pivot</strong><span class="si-desc">Monetize your &ldquo;hidden labor.&rdquo; We audit your core competencies, including translation and cross-cultural skills, to turn your vision into a profitable, independent path.</span></li>
             </ul>
             <a class="btn-book" href="https://calendly.com" target="_blank">&#128197; Book El Pr&oacute;ximo Nivel</a>
           </div>
@@ -1970,9 +1972,9 @@ footer {
             <p class="acc-tagline">For those moving into a season of legacy. We honor your financial history, ground it in the present, and architect your future.</p>
             <div class="acc-includes">Includes: Custom financial modeling dashboards + collaborative family finance planning</div>
             <ul class="service-includes">
-              <li><strong>The Coast FI Blueprint</strong> &mdash; A deep-dive audit of your net worth, pensions, and portfolios. We build a sustainable path to independence, ensuring you can manage your ecosystem long after our sessions conclude.</li>
-              <li><strong>The Generational Shield</strong> &mdash; Asset protection, tax optimization, and wealth preservation. Leveraging VITA (tax) experience, I demystify your tax footprint and navigate the emotional weight of &ldquo;first-gen wealth guilt&rdquo; to embrace abundance.</li>
-              <li><strong>Intergenerational Architecture</strong> &mdash; We facilitate essential conversations with your parents regarding retirement, pensions, and social security, creating strategies for the unique reality of immigrant families.</li>
+              <li><strong>The Coast FI Blueprint</strong><span class="si-desc">A deep-dive audit of your net worth, pensions, and portfolios. We build a sustainable path to independence, ensuring you can manage your ecosystem long after our sessions conclude.</span></li>
+              <li><strong>The Generational Shield</strong><span class="si-desc">Asset protection, tax optimization, and wealth preservation. Leveraging VITA (tax) experience, I demystify your tax footprint and navigate the emotional weight of &ldquo;first-gen wealth guilt&rdquo; to embrace abundance.</span></li>
+              <li><strong>Intergenerational Architecture</strong><span class="si-desc">We facilitate essential conversations with your parents regarding retirement, pensions, and social security, creating strategies for the unique reality of immigrant families.</span></li>
             </ul>
             <a class="btn-book" href="https://calendly.com" target="_blank">&#128197; Book El Legado</a>
           </div>

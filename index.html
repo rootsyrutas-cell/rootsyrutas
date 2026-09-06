@@ -263,7 +263,7 @@ nav.scrolled .nav-logo { color:var(--deep); }
 .nav-links { display:flex; gap:0; list-style:none; align-items:center; }
 .nav-links a {
   text-decoration:none;
-  font-size:17px;
+  font-size:15px;
   font-weight:400;
   color:rgba(255,255,255,0.75);
   letter-spacing:1.5px;
@@ -2933,14 +2933,25 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 <script>
 // Page templates stored in script tags, loaded on demand
-function showPage(page) {
+function showPage(page, opts) {
+  opts = opts || {};
   var tpl = document.getElementById('tpl-page-' + page);
   if (!tpl) return;
-  
+
   // Clear and inject
   var app = document.getElementById('app');
   app.innerHTML = tpl.innerHTML;
-  
+
+  // Keep the URL and browser history in sync so back/forward work
+  if (!opts.skipHistory) {
+    var url = page === 'home' ? '#' : '#' + page;
+    if (opts.replace) {
+      history.replaceState({ page: page }, '', url);
+    } else {
+      history.pushState({ page: page }, '', url);
+    }
+  }
+
   // Scroll to top immediately
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
@@ -2968,6 +2979,12 @@ function showPage(page) {
     sticky.classList.remove('visible');
   }
 }
+
+// Browser back/forward: re-render the page without pushing a new history entry
+window.addEventListener('popstate', function(e) {
+  var page = (e.state && e.state.page) || (location.hash ? location.hash.slice(1) : 'home');
+  showPage(page, { skipHistory: true });
+});
 
 // Mobile hamburger menu
 function toggleMobileMenu() {
@@ -3067,8 +3084,10 @@ function toggleAcc(id) {
   });
 }
 
-// Load home page on start
-showPage('home');
+// Load the page matching the current URL on start (falls back to home)
+var initialPage = location.hash ? location.hash.slice(1) : 'home';
+if (!document.getElementById('tpl-page-' + initialPage)) initialPage = 'home';
+showPage(initialPage, { replace: true });
 </script>
 
 </body>

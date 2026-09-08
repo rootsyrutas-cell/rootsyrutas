@@ -3,7 +3,8 @@
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="images/hero-home.jpg">
+<link rel="preload" as="image" href="images/hero-home-mobile.jpg" media="(max-width:900px)">
+<link rel="preload" as="image" href="images/hero-home.jpg" media="(min-width:901px)">
 <style>
   .page { 
     display: none !important; 
@@ -56,7 +57,7 @@
 
 /* ── RUTAS CAROUSEL ── */
 .rutas-carousel-wrap { overflow:hidden; position:relative; }
-.rutas-carousel-track { display:flex; width:200%; animation:rutas-slide 8s steps(1,end) infinite; }
+.rutas-carousel-track { display:flex; width:200%; height:100%; animation:rutas-slide 8s steps(1,end) infinite; }
 .rutas-slide { width:50%; flex-shrink:0; }
 .rutas-slide img { width:100%; height:100%; object-fit:cover; display:block; }
 @keyframes rutas-slide {
@@ -68,7 +69,7 @@
 
 /* ── ROOTS CAROUSEL ── */
 .roots-carousel-wrap { overflow:hidden; position:relative; }
-.roots-carousel-track { display:flex; width:400%; animation:roots-slide 16s steps(1,end) infinite; }
+.roots-carousel-track { display:flex; width:400%; height:100%; animation:roots-slide 16s steps(1,end) infinite; }
 .roots-slide { width:25%; flex-shrink:0; }
 .roots-slide img { width:100%; height:100%; object-fit:cover; display:block; }
 @keyframes roots-slide {
@@ -82,7 +83,7 @@
 
 /* ── SECTION CAROUSELS (shared) ── */
 .rry-carousel-wrap { overflow:hidden; position:relative; }
-.rry-carousel-track { display:flex; animation-duration:10s; animation-timing-function:steps(1,end); animation-iteration-count:infinite; }
+.rry-carousel-track { display:flex; height:100%; animation-duration:10s; animation-timing-function:steps(1,end); animation-iteration-count:infinite; }
 .rry-slide { flex-shrink:0; }
 .rry-slide img { width:100%; height:100%; object-fit:cover; display:block; }
 
@@ -1572,6 +1573,23 @@ footer {
   .cta-band-actions { align-items:flex-start; }
   footer { padding:48px 24px 24px; }
   .footer-top { gap:24px; }
+
+  /* Swap in smaller, mobile-sized photos to cut page weight on phones */
+  .hero-img { background-image:
+    linear-gradient(to bottom, rgba(13,26,28,0.72) 0%, rgba(13,26,28,0.65) 40%, rgba(13,26,28,0.85) 100%),
+    url('images/hero-home-mobile.jpg'); }
+  #page-hero-strategy-img { background-image:
+    linear-gradient(to bottom, rgba(13,26,28,0.2) 0%, rgba(13,26,28,0.8) 100%),
+    url('images/hero-strategy-mobile.jpg') !important; }
+  #page-hero-art-img { background-image:
+    linear-gradient(to bottom, rgba(13,26,28,0.15) 0%, rgba(13,26,28,0.85) 100%),
+    url('images/hero-art-mobile.jpg') !important; }
+  #page-hero-about-img { background-image:
+    linear-gradient(to bottom, rgba(13,26,28,0.2) 0%, rgba(13,26,28,0.8) 100%),
+    url('images/hero-about-mobile.jpg') !important; }
+  #portal-img-art { background-image:
+    linear-gradient(to bottom, rgba(13,26,28,0.2) 0%, rgba(13,26,28,0.7) 100%),
+    url('images/portal-art-mobile.jpg') !important; }
 }
 
 @media(max-width:600px){
@@ -1804,7 +1822,7 @@ footer {
       </div>
     </div>
     <div class="portal" onclick="showPage('art')">
-      <div class="portal-img" style="background:
+      <div class="portal-img" id="portal-img-art" style="background:
         linear-gradient(to bottom, rgba(13,26,28,0.2) 0%, rgba(13,26,28,0.7) 100%),
         url('images/portal-art.jpg') center/cover no-repeat;">
       </div>
@@ -1976,9 +1994,9 @@ footer {
 <script type="text/html" id="tpl-page-strategy">
 
   <section class="page-hero">
-    <div class="page-hero-img" style="background:
+    <div class="page-hero-img" id="page-hero-strategy-img" style="background:
       linear-gradient(to bottom, rgba(13,26,28,0.2) 0%, rgba(13,26,28,0.8) 100%),
-      url('images/hero-strategy.jpg">
+      url('images/hero-strategy.jpg') center/cover no-repeat;">
     </div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content" style="text-align:center;width:100%;">
@@ -2489,7 +2507,7 @@ footer {
 <script type="text/html" id="tpl-page-art">
 
   <section class="page-hero" style="display:flex;align-items:center;justify-content:center;">
-    <div class="page-hero-img" style="background:
+    <div class="page-hero-img" id="page-hero-art-img" style="background:
       linear-gradient(to bottom, rgba(13,26,28,0.15) 0%, rgba(13,26,28,0.85) 100%),
       url('images/hero-art.jpg') center top/cover no-repeat;">
     </div>
@@ -2681,7 +2699,7 @@ footer {
 <script type="text/html" id="tpl-page-about">
 
   <section class="page-hero" style="align-items:center;justify-content:center;">
-    <div class="page-hero-img" style="background:
+    <div class="page-hero-img" id="page-hero-about-img" style="background:
       linear-gradient(to bottom, rgba(13,26,28,0.2) 0%, rgba(13,26,28,0.8) 100%),
       url('images/hero-about.jpg') center/cover no-repeat;">
     </div>

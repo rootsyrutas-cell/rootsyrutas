@@ -264,15 +264,16 @@ nav.scrolled .nav-logo { color:var(--deep); }
 .nav-links { display:flex; gap:0; list-style:none; align-items:center; }
 .nav-links a {
   text-decoration:none;
-  font-size:15px;
+  font-size:12px;
   font-weight:400;
   color:rgba(255,255,255,0.75);
-  letter-spacing:1.5px;
+  letter-spacing:0.8px;
   text-transform:uppercase;
   transition:all 0.3s;
-  padding:8px 16px;
+  padding:8px 11px;
   cursor:pointer;
   position:relative;
+  white-space:nowrap;
 }
 nav.scrolled .nav-links a { color:rgba(13,26,28,0.55); }
 .nav-links a:hover { color:var(--warm); }
@@ -308,7 +309,9 @@ nav.scrolled .nav-links a:hover { color:var(--teal); }
   border:1px solid rgba(255,255,255,0.45) !important;
   color:white !important;
   border-radius:2px;
-  padding:9px 20px !important;
+  padding:8px 16px !important;
+  margin-left:6px;
+  white-space:nowrap;
   transition:all 0.3s !important;
 }
 .nav-book:hover { background:white !important; color:var(--deep) !important; }

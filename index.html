@@ -107,6 +107,24 @@
 }
 .rry-carousel-track[style*="rry-car-slide"] { width:300%; }
 .rry-carousel-track[style*="rry-car-slide"] .rry-slide { width:33.333%; }
+/* ¿Y ahora qué? feature on the home page */
+.yaq { background:var(--deep); padding:80px 56px; }
+.yaq-inner { max-width:1200px; margin:0 auto; text-align:center; }
+.yaq-eyebrow { font-family:'Caveat',cursive; font-size:28px; color:var(--gold); letter-spacing:3px; text-transform:uppercase; display:block; margin-bottom:12px; }
+.yaq-title { font-family:'Fraunces',serif; font-weight:300; font-size:clamp(32px,4.2vw,52px); color:white; line-height:1.1; margin-bottom:16px; }
+.yaq-title em { font-style:italic; color:var(--gold); }
+.yaq-sub { font-family:'Crimson Pro',serif; font-size:20px; color:rgba(247,244,239,0.75); margin:0 auto 40px; max-width:560px; }
+.yaq-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; text-align:left; margin-bottom:40px; }
+.yaq-card { display:flex; flex-direction:column; gap:10px; background:rgba(247,244,239,0.06); border:1px solid rgba(247,244,239,0.14); border-radius:4px; padding:24px 20px; text-decoration:none; transition:background 0.2s, border-color 0.2s; }
+.yaq-card:hover { background:rgba(247,244,239,0.12); border-color:var(--gold); }
+.yaq-num { font-size:11px; font-weight:600; letter-spacing:2px; color:var(--gold); }
+.yaq-card-title { font-family:'Fraunces',serif; font-size:22px; color:white; line-height:1.2; }
+.yaq-card-desc { font-size:15px; color:rgba(247,244,239,0.7); line-height:1.55; flex:1; }
+.yaq-go { font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--gold); }
+.yaq-cta { display:inline-block; background:var(--gold); color:var(--deep); padding:16px 36px; font-size:13px; font-weight:600; letter-spacing:2px; text-transform:uppercase; text-decoration:none; border-radius:2px; }
+.yaq-cta:hover { background:white; }
+@media(max-width:1000px){ .yaq-grid { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:600px){ .yaq { padding:56px 16px; } .yaq-grid { grid-template-columns:1fr; } }
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1689,15 +1707,10 @@ footer {
 <nav id="mainNav">
   <span class="nav-logo" onclick="showPage('home')" style="display:inline-flex;align-items:center;gap:10px;"><img src="images/nav-logo-icon.png" alt="" style="height:52px;width:auto;display:block;">Roots <em>y</em> Rutas</span>
   <ul class="nav-links">
+    <li><a class="nav-book" href="/y-ahora-que/">&iquest;Y ahora qu&eacute;? &rarr;</a></li>
     <li><a onclick="showPage('home')" data-es="Inicio">Home</a></li>
-    <li><a onclick="showPage('about')" data-es="Nosotros">About</a></li>
-    <li><a href="/y-ahora-que/">&iquest;Y ahora qu&eacute;?</a></li>
-    <li><a onclick="showPage('art')" data-es="Anexo de Arte">Art Annex</a></li>
-    <li><a onclick="showPage('loft')" data-es="El Estudio de Composici&oacute;n">Composition Loft</a></li>
-    <li><a onclick="showPage('strategy')" data-es="Estudio de Estrategia">Strategy Studio</a></li>
-    <li><a onclick="showPage('wellness')" data-es="Laboratorio de Bienestar">Wellness Lab</a></li>
     <li><a onclick="showPage('tienda')">La Tienda Familiar</a></li>
-    <li><a class="nav-book" href="https://calendly.com/rootsyrutas/30min" target="_blank" data-es="Agenda una Llamada">📅 Book a Call</a></li>
+    <li><a onclick="showPage('about')" data-es="Nosotros">About</a></li>
   </ul>
   <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileMenu()" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -1706,15 +1719,10 @@ footer {
 
 <div class="mobile-menu" id="mobileMenu">
   <ul class="mobile-menu-links">
+    <li><a class="mobile-nav-book" href="/y-ahora-que/">&iquest;Y ahora qu&eacute;? &rarr;</a></li>
     <li><a onclick="showPage('home')">Home<em>Inicio</em></a></li>
-    <li><a onclick="showPage('about')">About<em>Nosotros</em></a></li>
-    <li><a href="/y-ahora-que/">&iquest;Y ahora qu&eacute;?<em>Opportunities hub</em></a></li>
-    <li><a onclick="showPage('art')">Art Annex<em>Anexo de Arte</em></a></li>
-    <li><a onclick="showPage('loft')">Composition Loft<em>El Estudio de Composici&oacute;n</em></a></li>
-    <li><a onclick="showPage('strategy')">Strategy Studio<em>Estudio de Estrategia</em></a></li>
-    <li><a onclick="showPage('wellness')">Wellness Lab<em>Laboratorio de Bienestar</em></a></li>
     <li><a onclick="showPage('tienda')">La Tienda Familiar</a></li>
-    <li><a class="mobile-nav-book" href="https://calendly.com/rootsyrutas/30min" target="_blank" onclick="closeMobileMenu()">📅 Book a Call</a></li>
+    <li><a onclick="showPage('about')">About<em>Nosotros</em></a></li>
   </ul>
 </div>
 
@@ -1734,9 +1742,10 @@ footer {
         Honor Your Roots.
         <em>Shape Your Routes.</em>
       </h1>
-      <p class="hero-sub" style="font-family:'Crimson Pro',serif;color:#FAF6EE;font-style:normal;font-size:clamp(18px,2vw,24px);font-weight:400;max-width:640px;line-height:1.55;opacity:0.95;"><em style="font-style:normal;color:var(--gold);">Your one-stop shop</em> for career, money, wellness, education, entrepreneurship, and creativity, all rooted in culture. Todo aquí, para ti y los tuyos.</p>
+      <p class="hero-sub" style="font-family:'Crimson Pro',serif;color:#FAF6EE;font-style:normal;font-size:clamp(18px,2vw,24px);font-weight:400;max-width:640px;line-height:1.55;opacity:0.95;">You graduated. <em style="font-style:normal;color:var(--gold);">&iquest;Y ahora qu&eacute;?</em> Our free hub helps first-gens find the fellowships, paid programs and ways into AI work that fit their lives, and figure out the money side too. Todo aquí, para ti y los tuyos.</p>
       <div class="hero-actions">
-        <span class="btn-hero-primary" onclick="showPage('about')" style="background:var(--gold);color:var(--deep);font-size:15px;padding:16px 36px;letter-spacing:2px;font-weight:600;">Our Story →</span>
+        <a class="btn-hero-primary" href="/y-ahora-que/" style="background:var(--gold);color:var(--deep);font-size:15px;padding:16px 36px;letter-spacing:2px;font-weight:600;text-decoration:none;">&iquest;Y ahora qu&eacute;? →</a>
+        <span class="btn-hero-primary" onclick="showPage('about')" style="background:transparent;color:white;border:1px solid rgba(255,255,255,0.6);font-size:15px;padding:16px 36px;letter-spacing:2px;font-weight:600;">Our Story</span>
       </div>
     </div>
   </section>
@@ -1746,8 +1755,8 @@ footer {
     <p class="intro-tagline">"The doors we found, <em>we hold open."</em></p>
     <div class="intro-stats">
       <div class="intro-stat">
-        <div class="intro-num"><span class="counter" data-target="4">0</span></div>
-        <div class="intro-label">Pillars of Holistic Expertise</div>
+        <div class="intro-num"><span class="counter" data-target="5">0</span></div>
+        <div class="intro-label">Free Tools in &iquest;Y ahora qu&eacute;?</div>
       </div>
       <div class="intro-stat">
         <div class="intro-num">$<span class="counter" data-target="1.5" data-suffix="M+">0</span></div>
@@ -1796,64 +1805,22 @@ footer {
     </div>
   </div>
 
-  <!-- FOUR PORTALS -->
-  <div class="portals">
-    <div class="portal" onclick="showPage('strategy')">
-      <div class="portal-img" style="background:
-        linear-gradient(to bottom, rgba(13,26,28,0.3) 0%, rgba(13,26,28,0.7) 100%),
-        url('images/portal-strategy.jpg') center/cover no-repeat;">
+  <!-- Y AHORA QUE -->
+  <section class="yaq">
+    <div class="yaq-inner">
+      <span class="yaq-eyebrow">&iquest;y ahora qu&eacute;?</span>
+      <h2 class="yaq-title">You graduated. <em>Now what?</em></h2>
+      <p class="yaq-sub">A free opportunities hub for first-gens, in English and Spanish. Start anywhere.</p>
+      <div class="yaq-grid">
+        <a class="yaq-card" href="/y-ahora-que/#path"><span class="yaq-num">01</span><span class="yaq-card-title">Find my path</span><span class="yaq-card-desc">Not sure what to apply to? Answer five quick questions and see what fits your life right now, plus your next three steps.</span><span class="yaq-go">Open &rarr;</span></a>
+        <a class="yaq-card" href="/y-ahora-que/#explore"><span class="yaq-num">02</span><span class="yaq-card-title">Explore</span><span class="yaq-card-desc">Fellowships, paid programs and ways into AI work, picked for first-gens and checked against official sources.</span><span class="yaq-go">Open &rarr;</span></a>
+        <a class="yaq-card" href="/y-ahora-que/#tracker"><span class="yaq-num">03</span><span class="yaq-card-title">My applications</span><span class="yaq-card-desc">Track what you&#8217;re applying to, what&#8217;s due, what you still need, and how it turned out.</span><span class="yaq-go">Open &rarr;</span></a>
+        <a class="yaq-card" href="/y-ahora-que/#community"><span class="yaq-num">04</span><span class="yaq-card-title">Community</span><span class="yaq-card-desc">First-gens who won these opportunities and are open to questions.</span><span class="yaq-go">Open &rarr;</span></a>
+        <a class="yaq-card" href="/y-ahora-que/#money"><span class="yaq-num">05</span><span class="yaq-card-title">Money by stage</span><span class="yaq-card-desc">Short guides for the money questions nobody at home could answer for you.</span><span class="yaq-go">Open &rarr;</span></a>
       </div>
-      <div class="portal-overlay"></div>
-      <div class="portal-divider"></div>
-      <div class="portal-content">
-        <span class="portal-tag">Fellowships · Career · Personal Finance</span>
-        <div class="portal-name">The Strategy<br>Studio</div>
-        <div class="portal-desc">Career coaching, fellowship navigation, financial planning, and college access with Anabel.</div>
-        <div class="portal-cta">Enter <span class="portal-cta-arrow">→</span></div>
-      </div>
+      <a class="yaq-cta" href="/y-ahora-que/">Open &iquest;Y ahora qu&eacute;? &rarr;</a>
     </div>
-    <div class="portal" onclick="showPage('wellness')">
-      <div class="portal-img" style="background:
-        linear-gradient(to bottom, rgba(13,26,28,0.2) 0%, rgba(13,26,28,0.7) 100%),
-        url('images/portal-wellness.jpg') center/cover no-repeat;">
-      </div>
-      <div class="portal-overlay"></div>
-      <div class="portal-divider"></div>
-      <div class="portal-content">
-        <span class="portal-tag">Fitness · Nutrition · Performance</span>
-        <div class="portal-name">The Wellness<br>Lab</div>
-        <div class="portal-desc">Culturally grounded training and nutrition with Hector.</div>
-        <div class="portal-cta">Enter <span class="portal-cta-arrow">→</span></div>
-      </div>
-    </div>
-    <div class="portal" onclick="showPage('art')">
-      <div class="portal-img" id="portal-img-art" style="background:
-        linear-gradient(to bottom, rgba(13,26,28,0.2) 0%, rgba(13,26,28,0.7) 100%),
-        url('images/portal-art.jpg') center/cover no-repeat;">
-      </div>
-      <div class="portal-overlay"></div>
-      <div class="portal-divider"></div>
-      <div class="portal-content">
-        <span class="portal-tag">Printmaking · Commissions · Snail Mail</span>
-        <div class="portal-name">The Art<br>Annex</div>
-        <div class="portal-desc">Hand-pressed prints, Snail Mail Club, and living abroad coaching with Daniela.</div>
-        <div class="portal-cta">Enter <span class="portal-cta-arrow">→</span></div>
-      </div>
-    </div>
-    <div class="portal" onclick="showPage('loft')">
-      <div class="portal-img" style="background:
-        linear-gradient(to bottom, rgba(13,26,28,0.2) 0%, rgba(13,26,28,0.7) 100%),
-        url('images/portal-loft.jpg') center/cover no-repeat;">
-      </div>
-      <div class="portal-overlay"></div>
-      <div class="portal-content">
-        <span class="portal-tag">Piano · Composition · Web Design</span>
-        <div class="portal-name">The Composition<br>Loft</div>
-        <div class="portal-desc">Website builds for your business and piano lessons — computer science and music with Daniel.</div>
-        <div class="portal-cta">Enter <span class="portal-cta-arrow">→</span></div>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <!-- OUR STORY -->
   <section style="background:var(--teal);padding:72px 0;">
@@ -1996,711 +1963,6 @@ footer {
 </div>
 </script>
 
-<script type="text/html" id="tpl-page-strategy">
-
-  <section class="page-hero">
-    <div class="page-hero-img" id="page-hero-strategy-img" style="background:
-      linear-gradient(to bottom, rgba(13,26,28,0.2) 0%, rgba(13,26,28,0.8) 100%),
-      url('images/hero-strategy.jpg') center/cover no-repeat;">
-    </div>
-    <div class="page-hero-overlay"></div>
-    <div class="page-hero-content" style="text-align:center;width:100%;">
-      <span class="page-hero-eyebrow" style="font-size:26px;letter-spacing:4px;">Career · Fellowship · Finance</span>
-      <h1 class="page-hero-title">The Strategy<br><em>Studio</em></h1>
-      
-    </div>
-  </section>
-
-  <div class="person-intro">
-    <div class="person-photo" style="background:url('images/person-anabel.jpg') center top/cover no-repeat; min-height:500px;"></div>
-    <div class="person-text">
-      <div class="person-name">Anabel</div>
-      <div class="person-role">Lead Strategist, Roots y Rutas Strategy Studio</div>
-      <p class="person-bio">My story starts in the Dominican Republic and has taken me around the world, from human rights research in Mongolia to community work in Ethiopia and Greece. Along the way, I learned to adapt, try things that scared me, and grow wherever I was planted. I navigated academia and finance as a first-gen immigrant without a roadmap, and I've spent the last decade helping others do the same.</p>
-      <p class="person-bio">Through Scholarly Siblings and years of coaching, I've worked with international students, immigrants, first-generation professionals, and others charting their own path, helping 100+ of them secure over $1.5 million in funding and land opportunities that once felt out of reach. That's why my family and I built Roots y Rutas, the bridge we wish we'd had. Your career, finances, health, and creativity aren't separate tracks; they feed each other. I work with people applying for fellowships, launching careers, navigating pivots, and building something meaningful for their families. Book a free 20-minute call where we'll talk through your story and start building a strategy together.</p>
-      <div class="person-creds">
-        <span class="person-cred">AI Governance</span>
-        <span class="person-cred">SHRM Certified</span>
-        <span class="person-cred">Career Coach Cert</span>
-        <span class="person-cred">VITA Volunteer</span>
-        <span class="person-cred">Coca-Cola Scholar</span>
-        <span class="person-cred">Posse Full-Tuition Leadership Scholar</span>
-        <span class="person-cred">Critical Language Scholar (CLS) &middot; Brazil, Mongolia, Ethiopia, Greece, DR</span>
-        <span class="person-cred">Institutional Evaluator &amp; Volunteer (Posse, NISL-Y, Esperanza Fund)</span>
-        <span class="person-cred">IRS-Certified Advanced VITA Volunteer</span>
-      </div>
-      <a class="btn-book" href="https://calendly.com/rootsyrutas/30min" target="_blank">📅 Book with Anabel</a>
-    </div>
-  </div>
-
-  <!-- Hall of Fame -->
-  <div style="background:var(--deep);padding:32px 56px;overflow:hidden;">
-    <div style="font-family:'Caveat',cursive;font-size:14px;color:rgba(247,244,239,0.35);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;">Doors We've Opened</div>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;">
-      <span style="background:rgba(247,244,239,0.07);border:1px solid rgba(247,244,239,0.1);border-radius:2px;padding:6px 14px;font-size:15px;color:rgba(247,244,239,0.65);">Yale Global Scholars</span>
-      <span style="background:rgba(247,244,239,0.07);border:1px solid rgba(247,244,239,0.1);border-radius:2px;padding:6px 14px;font-size:15px;color:rgba(247,244,239,0.65);">The Consortium for Graduate Study in Management</span>
-      <span style="background:rgba(247,244,239,0.07);border:1px solid rgba(247,244,239,0.1);border-radius:2px;padding:6px 14px;font-size:15px;color:rgba(247,244,239,0.65);">Fuqua School of Business</span>
-      <span style="background:rgba(247,244,239,0.07);border:1px solid rgba(247,244,239,0.1);border-radius:2px;padding:6px 14px;font-size:15px;color:rgba(247,244,239,0.65);">Prague Summer Schools</span>
-      <span style="background:rgba(247,244,239,0.07);border:1px solid rgba(247,244,239,0.1);border-radius:2px;padding:6px 14px;font-size:15px;color:rgba(247,244,239,0.65);">UNC Kenan-Flagler</span>
-      <span style="background:rgba(247,244,239,0.07);border:1px solid rgba(247,244,239,0.1);border-radius:2px;padding:6px 14px;font-size:15px;color:rgba(247,244,239,0.65);">Rangel Fellowship</span>
-      <span style="background:rgba(247,244,239,0.07);border:1px solid rgba(247,244,239,0.1);border-radius:2px;padding:6px 14px;font-size:15px;color:rgba(247,244,239,0.65);">Boren Fellowship</span>
-      <span style="background:rgba(247,244,239,0.07);border:1px solid rgba(247,244,239,0.1);border-radius:2px;padding:6px 14px;font-size:15px;color:rgba(247,244,239,0.65);">Stanford Summer Program</span>
-      <span style="background:rgba(247,244,239,0.07);border:1px solid rgba(247,244,239,0.1);border-radius:2px;padding:6px 14px;font-size:15px;color:rgba(247,244,239,0.65);">Middlebury Language Schools</span>
-      <span style="background:rgba(247,244,239,0.07);border:1px solid rgba(247,244,239,0.1);border-radius:2px;padding:6px 14px;font-size:15px;color:rgba(247,244,239,0.65);">Hispanic Scholarship Foundation</span>
-    </div>
-  </div>
-
-  <!-- Services -->
-  <div class="services-section">
-    <div style="padding:0 0 40px;text-align:center;">
-      <h2 class="section-headline" style="text-align:center;">Strategic <em>Services</em></h2>
-      <p style="font-size:15px;font-weight:300;color:rgba(13,26,28,0.65);line-height:1.85;max-width:720px;margin-top:12px;text-align:center;margin-left:auto;margin-right:auto;">Select a service level to learn more and book your session.</p>
-    </div>
-
-    <!-- ACCORDION -->
-    <div class="acc-wrap">
-
-      <!-- El Launchpad -->
-      <div class="acc-item acc-open" id="acc-launchpad">
-        <div class="acc-header" onclick="toggleAcc('launchpad')">
-          <div class="acc-header-left">
-            <span class="acc-num">01</span>
-            <div>
-              <div class="acc-title">El Launchpad</div>
-              <div class="acc-sub">Systems Mastery for First-Gen Trailblazers</div>
-            </div>
-          </div>
-          <div class="acc-meta">
-            <span class="acc-price">$35 Students &nbsp;/&nbsp; $70 Professionals</span>
-            <span class="acc-chevron">&#9660;</span>
-          </div>
-        </div>
-        <div class="acc-body" id="body-launchpad">
-          <div class="acc-body-inner">
-            <p class="acc-tagline">Let's ensure your story shines — so you can map your path, land the opportunity, and build a foundation that lasts.</p>
-            <div class="acc-includes">Includes: 60-minute intensive strategy session + 1 deep-dive email review of your materials</div>
-            <ul class="service-includes">
-              <li><strong>The Pipeline Audit</strong><span class="si-desc">Your collegiate roadmap. End-to-end strategy for landing competitive internships, scholarships, and summer programs.</span></li>
-              <li><strong>The First-Job Blueprint</strong><span class="si-desc">The financial foundation you wish you had. Learn to negotiate your benefits, optimize your 401k/HSAs, crush debt, fund your Roth, and master conscious spending.</span></li>
-              <li><strong>Freedom Fund Architecture</strong><span class="si-desc">Calculate your financial starting line. We&rsquo;ll map your unique &ldquo;Coast FI&rdquo; milestone to ensure your early efforts buy you total freedom later.</span></li>
-            </ul>
-            <a class="btn-book" href="https://calendly.com/rootsyrutas/30min" target="_blank">&#128197; Book El Launchpad</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- El Próximo Nivel -->
-      <div class="acc-item" id="acc-proximo">
-        <div class="acc-header" onclick="toggleAcc('proximo')">
-          <div class="acc-header-left">
-            <span class="acc-num">02</span>
-            <div>
-              <div class="acc-title">El Pr&oacute;ximo Nivel</div>
-              <div class="acc-sub">Honoring your journey, building your path</div>
-            </div>
-          </div>
-          <div class="acc-meta">
-            <span class="acc-price">$135 &middot; 3-Session Package</span>
-            <span class="acc-chevron">&#9660;</span>
-          </div>
-        </div>
-        <div class="acc-body" id="body-proximo">
-          <div class="acc-body-inner">
-            <p class="acc-tagline">Whether you are pursuing a new career, or launching a consultancy, we ensure your next step honors your history and fuels your future.</p>
-            <div class="acc-includes">Includes: 3 &times; 60-minute intensive strategy sessions + 2 weeks of asynchronous support</div>
-            <ul class="service-includes">
-              <li><strong>Fellowship &amp; Post-Grad Strategy</strong><span class="si-desc">Elite execution for high-stakes programs (e.g., Fulbright, Rhodes) and competitive admissions.</span></li>
-              <li><strong>Tu Ruta: Career Navigation</strong><span class="si-desc">Rooted in identity, designed for your trajectory. Comprehensive career navigation, expert resume architecture, and a strategic pivot roadmap.</span></li>
-              <li><strong>The Consultant Pivot</strong><span class="si-desc">Monetize your &ldquo;hidden labor.&rdquo; We audit your core competencies, including translation and cross-cultural skills, to turn your vision into a profitable, independent path.</span></li>
-            </ul>
-            <a class="btn-book" href="https://calendly.com/rootsyrutas/30min" target="_blank">&#128197; Book El Pr&oacute;ximo Nivel</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- El Legado -->
-      <div class="acc-item" id="acc-legado">
-        <div class="acc-header" onclick="toggleAcc('legado')">
-          <div class="acc-header-left">
-            <span class="acc-num">03</span>
-            <div>
-              <div class="acc-title">El Legado</div>
-              <div class="acc-sub">Generational Wealth</div>
-            </div>
-          </div>
-          <div class="acc-meta">
-            <span class="acc-price">$180 &middot; 3-Session Package</span>
-            <span class="acc-chevron">&#9660;</span>
-          </div>
-        </div>
-        <div class="acc-body" id="body-legado">
-          <div class="acc-body-inner">
-            <p class="acc-tagline">For those moving into a season of legacy. We honor your financial history, ground it in the present, and architect your future.</p>
-            <div class="acc-includes">Includes: Custom financial modeling dashboards + collaborative family finance planning</div>
-            <ul class="service-includes">
-              <li><strong>The Coast FI Blueprint</strong><span class="si-desc">A deep-dive audit of your net worth, pensions, and portfolios. We build a sustainable path to independence, ensuring you can manage your ecosystem long after our sessions conclude.</span></li>
-              <li><strong>The Generational Shield</strong><span class="si-desc">Asset protection, tax optimization, and wealth preservation. Leveraging VITA (tax) experience, I demystify your tax footprint and navigate the emotional weight of &ldquo;first-gen wealth guilt&rdquo; to embrace abundance.</span></li>
-              <li><strong>Intergenerational Architecture</strong><span class="si-desc">We facilitate essential conversations with your parents regarding retirement, pensions, and social security, creating strategies for the unique reality of immigrant families.</span></li>
-            </ul>
-            <a class="btn-book" href="https://calendly.com/rootsyrutas/30min" target="_blank">&#128197; Book El Legado</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- DISCLAIMER -->
-    <div style="background:rgba(13,26,28,0.03);border:1px solid rgba(13,26,28,0.07);border-radius:4px;padding:20px 24px;margin-top:8px;">
-      <p style="font-size:11.5px;color:rgba(13,26,28,0.45);line-height:1.7;"><strong style="color:rgba(13,26,28,0.6);">Disclaimer:</strong> The Strategy Studio provides educational frameworks, math-backed modeling, systems analysis, and lifestyle design strategies based on extensive personal and professional experience. We do not provide licensed legal, tax, or investment advice. Clients are advised to consult with certified professionals before executing structural, binding legal or financial changes.</p>
-    </div>
-
-    <!-- HOLISTIC AVENUE -->
-    <div style="background:var(--deep);border-radius:4px;padding:24px 28px;margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
-      <p style="font-size:15px;color:rgba(247,244,239,0.65);line-height:1.65;flex:1;">At Roots y Rutas, we balance the rigors of high-level strategy with the rhythm of living. Continue your journey through our studio:<br><br>Optimize your vitality in the <span style="color:var(--gold);cursor:pointer;" onclick="showPage('wellness')">Wellness Lab →</span> &nbsp; Anchor your legacy in the <span style="color:var(--gold);cursor:pointer;" onclick="showPage('art')">Art Annex →</span></p>
-    </div>
-  </div>
-
-  <footer>
-  <footer>
-    <div class="footer-top">
-      <div><div class="footer-brand">Roots <em>y</em> Rutas</div><div class="footer-tagline">honor your roots · shape your routes</div></div>
-      <div><div class="footer-col-title">Strategy</div><ul class="footer-links"><li><a href="https://calendly.com/rootsyrutas/30min" target="_blank">Book a Call</a></li><li><a href="#">Templates</a></li></ul></div>
-      <div><div class="footer-col-title">Navigate</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a href="/y-ahora-que/">&iquest;Y ahora qu&eacute;?</a></li><li><a onclick="showPage('art')">Art Annex</a></li><li><a onclick="showPage('loft')">Composition Loft</a></li><li><a onclick="showPage('strategy')">Strategy Studio</a></li><li><a onclick="showPage('wellness')">Wellness Lab</a></li><li><a onclick="showPage('tienda')">La Tienda Familiar</a></li></ul></div>
-      <div><div class="footer-col-title">Connect</div><ul class="footer-links"><li><a href="#">Instagram</a></li><li><a href="mailto:areyesovalles@gmail.com">Email</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><span class="footer-copy">© 2026 Roots y Rutas · The Strategy Studio</span></div>
-  </footer>
-</div>
-</script>
-
-<script type="text/html" id="tpl-page-wellness">
-<div class="wellness-compact">
-
-  <section class="page-hero" style="background:linear-gradient(135deg,#0d1a1c 0%,#1a6b72 55%,#4a7c4e 100%);display:flex;align-items:center;justify-content:center;">
-    <div class="page-hero-overlay" style="background:rgba(13,26,28,0.35);"></div>
-    <div class="page-hero-content" style="text-align:center;width:100%;padding:0 56px;">
-      <span class="page-hero-eyebrow" style="font-size:20px;letter-spacing:4px;">Fitness · Nutrition · Performance</span>
-      <h1 class="page-hero-title">The Wellness<br><em>Lab</em></h1>
-    </div>
-  </section>
-
-  
-
-  <div class="person-intro">
-    <div class="person-photo" style="background:url('images/person-hector.jpg') center top/contain no-repeat; background-color:#0d1a1c; min-height:600px;"></div>
-    <div class="person-text">
-      <div class="person-name">Hector</div>
-      <div class="person-role">Lead Coach · Wellness Lab · <a href="https://instagram.com/Hecofacoach" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(107,124,126,0.4);">@Hecofacoach</a></div>
-      <p class="person-bio">I'm a NASM-certified personal trainer and nutrition coach, and my approach is built around your real life, your schedule, your culture, and your goals. I build programs that are flexible enough for wherever you are and effective enough to get real results.</p>
-      <p class="person-bio">My coaching philosophy is simple: sustainable habits over quick fixes. I work with anyone who wants to build strength, improve nutrition, and show up fully, without being told to abandon the foods and rhythms that make them who they are.</p>
-      <div class="person-creds">
-        <span class="person-cred">NASM Certified PT</span>
-        <span class="person-cred">Nutrition Coach</span>
-        <span class="person-cred">Adaptable Fitness Specialist</span>
-        <span class="person-cred">Community Educator</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- OUR APPROACH -->
-  <div class="serve" style="padding:64px 56px;">
-    <div style="max-width:900px;margin:0 auto;text-align:center;">
-      <span class="section-title-sm">Our Approach</span>
-      <h2 class="section-headline" style="text-align:center;">The Wellness Lab <em>difference</em></h2>
-    </div>
-    <div class="serve-grid" style="grid-template-columns:repeat(3,1fr);max-width:1000px;margin:32px auto 0;">
-      <div class="serve-item">
-        <span class="serve-icon">🍽️</span>
-        <div class="serve-title">Rooted in Culture</div>
-        <div class="serve-desc">Sancocho stays on the menu. Every plan is built around the foods, traditions, and rhythms you already have, not ones we hand you.</div>
-      </div>
-      <div class="serve-item">
-        <span class="serve-icon">🔄</span>
-        <div class="serve-title">Built to Adapt</div>
-        <div class="serve-desc">No gym? No problem. Traveling, working double shifts, or cooking for a full house, every program flexes to fit your real life.</div>
-      </div>
-      <div class="serve-item">
-        <span class="serve-icon">🌱</span>
-        <div class="serve-title">Sustainable, Not Quick Fixes</div>
-        <div class="serve-desc">No crash diets, no 30-day miracles. Just habits built to stick long after the program ends.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="services-section">
-    <div class="section-header" style="flex-direction:column;align-items:center;text-align:center;gap:20px;">
-      <div>
-        <span class="section-title-sm">1:1 Services</span>
-        <h2 class="section-headline">Work with <em>Hector</em></h2>
-      </div>
-    </div>
-    <div class="services-list">
-
-      <!-- shared affordability note -->
-      <div class="acc-wrap">
-      <div class="acc-item acc-open" id="acc-well-pt">
-        <div class="acc-header" onclick="toggleAccWell('well-pt')">
-          <div class="acc-header-left">
-            <span class="acc-num">01</span>
-            <div>
-              <div class="acc-title">Personal Training · Virtual</div>
-              <div class="acc-sub">$65/session · $175 for 3-pack · $650 for 12-pack</div>
-            </div>
-          </div>
-          <div class="acc-meta">
-            <a class="btn-book leaf" href="https://calendly.com/rootsyrutas/30min" target="_blank" onclick="event.stopPropagation()">📅 Book</a>
-            <span class="acc-chevron">&#9660;</span>
-          </div>
-        </div>
-        <div class="acc-body" id="body-well-pt">
-          <div class="acc-body-inner" style="padding:0 24px 28px 64px;">
-            <p style="font-size:15px;color:rgba(13,26,28,0.7);line-height:1.7;margin-bottom:16px;">Custom virtual training programs built via video calls around your real life, schedule, and goals. No gym required. Designed for adaptability, whether you're at home, traveling, or fitting it in between meetings.</p>
-            <p style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);font-family:'Caveat',cursive;font-size:14px;margin-bottom:8px;">Includes</p>
-            <ul class="service-includes">
-            <li>Initial fitness assessment and goal setting</li>
-            <li>Custom weekly training program that adapts to your body, schedule, previous injuries, and equipment</li>
-            <li>Form and workout coaching via video or in-person</li>
-            <li>Progress tracking and adjustments</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="acc-item" id="acc-well-nutrition">
-        <div class="acc-header" onclick="toggleAccWell('well-nutrition')">
-          <div class="acc-header-left">
-            <span class="acc-num">02</span>
-            <div>
-              <div class="acc-title">Nutrition Coaching</div>
-              <div class="acc-sub">$65/session · $175 for 3-session plan</div>
-            </div>
-          </div>
-          <div class="acc-meta">
-            <a class="btn-book leaf" href="https://calendly.com/rootsyrutas/30min" target="_blank" onclick="event.stopPropagation()">📅 Book</a>
-            <span class="acc-chevron">&#9660;</span>
-          </div>
-        </div>
-        <div class="acc-body" id="body-well-nutrition">
-          <div class="acc-body-inner" style="padding:0 24px 28px 64px;">
-            <p style="font-size:15px;color:rgba(13,26,28,0.7);line-height:1.7;margin-bottom:16px;">Meetings on building YOUR sustainable nutrition that works with your traditions and adapts to wherever life takes you. No diet culture, no shame, no unnecessary added expenses. Just nourishment that fits your real life and your roots.</p>
-            <p style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);font-family:'Caveat',cursive;font-size:14px;margin-bottom:8px;">Includes</p>
-            <ul class="service-includes">
-            <li>Nutrition assessment and goal alignment</li>
-            <li>Culturally-adapted meal adjustments and meal prep planning</li>
-            <li>Grocery tips and money-saving strategies when eating healthy</li>
-            <li>Preparation for eating out or enjoying family meals and holidays</li>
-            <li>Macro and tracking guidance without obsessing</li>
-            <li>Debunking nutrition myths</li>
-            <li>Weekly progress check-ins and adjustments</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="acc-item" id="acc-well-perf">
-        <div class="acc-header" onclick="toggleAccWell('well-perf')">
-          <div class="acc-header-left">
-            <span class="acc-num">03</span>
-            <div>
-              <div class="acc-title">Performance &amp; Lifestyle Coaching</div>
-              <div class="acc-sub">$97/session · $247 for 3-session package</div>
-            </div>
-          </div>
-          <div class="acc-meta">
-            <a class="btn-book leaf" href="https://calendly.com/rootsyrutas/30min" target="_blank" onclick="event.stopPropagation()">📅 Book</a>
-            <span class="acc-chevron">&#9660;</span>
-          </div>
-        </div>
-        <div class="acc-body" id="body-well-perf">
-          <div class="acc-body-inner" style="padding:0 24px 28px 64px;">
-            <p style="font-size:15px;color:rgba(13,26,28,0.7);line-height:1.7;margin-bottom:16px;">Whole-person coaching combining fitness, nutrition, and mindset, for anyone who wants to perform at their best at work, at home, and everywhere in between.</p>
-            <p style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);font-family:'Caveat',cursive;font-size:14px;margin-bottom:8px;">Includes</p>
-            <ul class="service-includes">
-            <li>Fitness and nutrition combined assessment</li>
-            <li>Energy management and meal planning for busy schedules</li>
-            <li>Sustainable habits built around your lifestyle</li>
-            <li>Accountability check-ins between sessions</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="acc-item" id="acc-well-household">
-        <div class="acc-header" onclick="toggleAccWell('well-household')">
-          <div class="acc-header-left">
-            <span class="acc-num">04</span>
-            <div>
-              <div class="acc-title">Household Wellness Audit</div>
-              <div class="acc-sub">$65 / household</div>
-            </div>
-          </div>
-          <div class="acc-meta">
-            <a class="btn-book leaf" href="https://calendly.com/rootsyrutas/30min" target="_blank" onclick="event.stopPropagation()">📅 Book</a>
-            <span class="acc-chevron">&#9660;</span>
-          </div>
-        </div>
-        <div class="acc-body" id="body-well-household">
-          <div class="acc-body-inner" style="padding:0 24px 28px 64px;">
-            <p style="font-size:15px;color:rgba(13,26,28,0.7);line-height:1.7;margin-bottom:16px;">One-time deep dive into your household's physical health foundation: fitness, nutrition, and a concrete action plan for each family member. Eating healthy does not have to be expensive.</p>
-            <p style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);font-family:'Caveat',cursive;font-size:14px;margin-bottom:8px;">Includes</p>
-            <ul class="service-includes">
-            <li>Full household fitness and nutrition snapshot</li>
-            <li>Individual action plan per family member</li>
-            <li>Pantry, meal prep planning, grocery list, budget, and routine review</li>
-            <li>Eating out preparation</li>
-            <li>30-day follow-up check-in included</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="products-section">
-    <div class="section-header" style="justify-content:center;text-align:center;">
-      <div>
-        <h2 class="section-headline">Digital tools <em>built to move you forward</em></h2>
-        <p style="font-size:15px;font-weight:300;color:rgba(13,26,28,0.65);line-height:1.8;max-width:680px;margin:12px auto 0;">These tools include workout programs, nutrition guides, and meal resources designed around the way real families eat and move. Start with what fits, go deeper when you're ready.</p>
-      </div>
-    </div>
-
-    <div class="products-grid" style="grid-template-columns:repeat(2,1fr);max-width:900px;margin-left:auto;margin-right:auto;">
-
-      <!-- Workout Programs -->
-      <div class="product-item">
-        <div class="product-thumb" style="background:linear-gradient(135deg,#1B4A2E,#2D5A27);">
-          <div class="product-avail yes">Available</div>
-          <div class="product-thumb-text">Workout<br>Programs</div>
-        </div>
-        <div class="product-info">
-          <div class="product-title">Workout Programs (each)</div>
-          <div class="product-blurb">Custom programs by HecofaCoach, each with a matching Excel tracker. Choose your style: Balanced, Powerlifting, Wellness, Bikini Focus, Minimal Equipment, Rolling Hypertrophy, and more.</div>
-          <div class="product-footer-row">
-            <div><div class="product-price-display">$17</div><span class="product-price-note">Per program · Excel tracker included</span></div>
-            <a class="btn-sm" style="background:var(--green);text-decoration:none;color:white;" href="https://rootsyrutas.gumroad.com/" target="_blank" rel="noopener">Browse Programs</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bundle -->
-      <div class="product-item">
-        <div class="product-thumb" style="background:linear-gradient(135deg,#3a2a0a,#8a6a1a);">
-          <div class="product-avail yes">Best Value</div>
-          <div class="product-thumb-text">Wellness Lab<br>Bundle</div>
-        </div>
-        <div class="product-info">
-          <div class="product-title">The Wellness Lab Bundle</div>
-          <div class="product-blurb">All 9 workout programs with Excel trackers, the Nutrition &amp; Macros Guide, and the Healthy Latino Kitchen recipe book. Every tool, one price.</div>
-          <div class="product-footer-row">
-            <div><div class="product-price-display">$79</div><span class="product-price-note"><s style="color:rgba(13,26,28,0.35);">$186</s> · instant download</span></div>
-            <a class="btn-sm" style="background:var(--gold);color:var(--deep);font-weight:600;text-decoration:none;" href="https://rootsyrutas.gumroad.com/l/awigit" target="_blank" rel="noopener">Get Bundle</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Healthy Latino Kitchen -->
-      <div class="product-item">
-        <div class="product-thumb" style="background:linear-gradient(135deg,#8b3a1a,#c8541a);">
-          <div class="product-avail yes">Available</div>
-          <div class="product-thumb-text">Healthy Latino<br>Kitchen</div>
-        </div>
-        <div class="product-info">
-          <div class="product-title">Healthy Latino Kitchen</div>
-          <div class="product-blurb">11 lightened-up family recipes (sancocho, pastelón, mangú, habichuelas, and more) with healthy swaps and scaling guides.</div>
-          <div class="product-footer-row">
-            <div><div class="product-price-display">$14</div><span class="product-price-note">PDF · instant download</span></div>
-            <a class="btn-sm" style="background:var(--green);text-decoration:none;color:white;" href="https://rootsyrutas.gumroad.com/l/kgtia" target="_blank" rel="noopener">Buy on Gumroad</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Nutrition & Macros Guide -->
-      <div class="product-item">
-        <div class="product-thumb" style="background:linear-gradient(135deg,#075E52,var(--teal));">
-          <div class="product-avail yes">Available</div>
-          <div class="product-thumb-text">Nutrition &amp;<br>Macros Guide</div>
-        </div>
-        <div class="product-info">
-          <div class="product-title">Nutrition &amp; Macros Guide</div>
-          <div class="product-blurb">The complete coaching companion: calories, macros, tracking, satiety, diet breaks, meal prep, and more, all in plain language.</div>
-          <div class="product-footer-row">
-            <div><div class="product-price-display">$19</div><span class="product-price-note">PDF · instant download</span></div>
-            <a class="btn-sm" style="background:var(--teal);text-decoration:none;color:white;" href="https://rootsyrutas.gumroad.com/l/rrianx" target="_blank" rel="noopener">Buy on Gumroad</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Disclaimer -->
-    <p style="font-size:11.5px;color:rgba(13,26,28,0.4);line-height:1.7;margin-top:20px;white-space:nowrap;">Digital products are for general informational purposes only and are not medical or nutritional advice. Consult a qualified professional before making changes to your diet or exercise routine.</p>
-
-  </div>
-
-  <!-- FREE RESOURCES -->
-  <div class="products-section" style="background:var(--off-white);border-top:2px solid var(--teal);">
-    <div class="section-header" style="justify-content:center;text-align:center;">
-      <div>
-        <h2 class="section-headline" style="text-align:center;">Free resources <em>for everyone</em></h2>
-      </div>
-    </div>
-    <div class="products-grid" style="grid-template-columns:repeat(3,1fr);max-width:900px;margin-left:auto;margin-right:auto;">
-
-      <div class="product-item">
-        <div class="product-thumb" style="background:linear-gradient(135deg,#0d5c3a,#1a8a5c);">
-          <div class="product-avail yes">Free</div>
-          <div class="product-thumb-text">Grocery<br>Guide</div>
-        </div>
-        <div class="product-info">
-          <div class="product-title">Grocery Guide</div>
-          <div class="product-blurb">A simple, budget-friendly shopping list to help you eat well without breaking the bank. Easy to use, no experience needed.</div>
-          <div class="product-footer-row">
-            <div><div class="product-price-display">Free</div><span class="product-price-note">Instant download</span></div>
-            <a class="btn-sm" style="background:var(--teal);text-decoration:none;color:white;" href="resources/RootsyRutas_BudgetGroceryList.pdf" target="_blank" rel="noopener">Download</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-item">
-        <div class="product-thumb" style="background:linear-gradient(135deg,#1a3a5c,#5c3a1a);">
-          <div class="product-avail yes">Free</div>
-          <div class="product-thumb-text">Lift Form<br>Checklists</div>
-        </div>
-        <div class="product-info">
-          <div class="product-title">Lift Form Checklists</div>
-          <div class="product-blurb">Step-by-step form guides for the Bench Press, Squat, and Deadlift: safe cues and breakdowns for beginners and anyone getting back at it.</div>
-          <div class="product-footer-row">
-            <div><div class="product-price-display">Free</div><span class="product-price-note">3 guides · instant download</span></div>
-            <a class="btn-sm" style="background:var(--teal);text-decoration:none;color:white;" href="resources/Roots-y-Rutas_Bench-Squat-Deadlift.pdf" target="_blank" rel="noopener">Download</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-item">
-        <div class="product-thumb" style="background:linear-gradient(135deg,#1a5c3a,var(--green));">
-          <div class="product-avail yes">Free</div>
-          <div class="product-thumb-text">Ladder Milestone<br>System</div>
-        </div>
-        <div class="product-info">
-          <div class="product-title">Ladder Milestone System</div>
-          <div class="product-blurb">A simple progress tracker that celebrates small wins and keeps you moving forward, no matter where you're starting from.</div>
-          <div class="product-footer-row">
-            <div><div class="product-price-display">Free</div><span class="product-price-note">Instant download</span></div>
-            <a class="btn-sm" style="background:var(--teal);text-decoration:none;color:white;" href="resources/Roots-y-Rutas_The-Ladder.pdf" target="_blank" rel="noopener">Download</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- HOLISTIC AVENUE -->
-    <div style="background:var(--deep);border-radius:4px;padding:24px 28px;margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
-      <p style="font-size:15px;color:rgba(247,244,239,0.65);line-height:1.65;flex:1;">Training and nutrition are one part of the picture. Continue your journey through our studio:<br><br>Sharpen your career and finances in the <span style="color:var(--gold);cursor:pointer;" onclick="showPage('strategy')">Strategy Studio →</span> &nbsp; Anchor your legacy in the <span style="color:var(--gold);cursor:pointer;" onclick="showPage('art')">Art Annex →</span></p>
-    </div>
-  </div>
-
-
-  <footer>
-    <div class="footer-top">
-      <div><div class="footer-brand">Roots <em>y</em> Rutas</div><div class="footer-tagline">honor your roots · shape your routes</div></div>
-      <div><div class="footer-col-title">Wellness</div><ul class="footer-links"><li><a href="https://calendly.com/rootsyrutas/30min" target="_blank">Book with Hector</a></li><li><a href="#">Programs</a></li></ul></div>
-      <div><div class="footer-col-title">Navigate</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a href="/y-ahora-que/">&iquest;Y ahora qu&eacute;?</a></li><li><a onclick="showPage('art')">Art Annex</a></li><li><a onclick="showPage('loft')">Composition Loft</a></li><li><a onclick="showPage('strategy')">Strategy Studio</a></li><li><a onclick="showPage('wellness')">Wellness Lab</a></li><li><a onclick="showPage('tienda')">La Tienda Familiar</a></li></ul></div>
-      <div><div class="footer-col-title">Connect</div><ul class="footer-links"><li><a href="#">Instagram</a></li><li><a href="mailto:areyesovalles@gmail.com">Email</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><span class="footer-copy">© 2026 Roots y Rutas · The Wellness Lab</span></div>
-  </footer>
-</div>
-</div>
-</div>
-</script>
-
-<script type="text/html" id="tpl-page-art">
-
-  <section class="page-hero" style="display:flex;align-items:center;justify-content:center;">
-    <div class="page-hero-img" id="page-hero-art-img" style="background:
-      linear-gradient(to bottom, rgba(13,26,28,0.15) 0%, rgba(13,26,28,0.85) 100%),
-      url('images/hero-art.jpg') center top/cover no-repeat;">
-    </div>
-    <div class="page-hero-overlay"></div>
-    <div class="page-hero-content" style="text-align:center;width:100%;padding:0 56px;">
-      <span class="page-hero-eyebrow">Printmaking · Snail Mail · Living Abroad</span>
-      <h1 class="page-hero-title">The Art<br><em style="color:var(--warm);">Annex</em></h1>
-      <p class="page-hero-sub" style="margin-left:auto;margin-right:auto;">art that feels like home.</p>
-    </div>
-  </section>
-
-  <div class="person-intro" style="background:var(--deep);">
-    <div class="person-photo" style="background:url('images/person-daniela.jpg') center top/cover no-repeat; min-height:500px;"></div>
-    <div class="person-text" style="background:var(--deep);">
-      <div class="person-name" style="color:white;">Daniela<br></div>
-      <div class="person-role" style="color:var(--mid);">Lead Artist · Art Annex</div>
-      <p class="person-bio" style="color:rgba(247,244,239,0.65);">I bring family stories to life through handmade work rooted in culture and connection. A graduate of Williams College's Studio Arts program, I work primarily as a printmaker and painter, celebrating Dominican botanicals, Caribbean light, and my family's immigrant story. My art explores what it means to live on the hyphen, drawing from my own life to reflect on family, nature, and human connection.</p>
-      <p class="person-bio" style="color:rgba(247,244,239,0.65);">I'm equally devoted to expanding access to arts education for under-resourced youth, from teaching painting to kids in Lawrence, Massachusetts to spending a year as a Fulbright English Teaching Assistant in Italy, where I volunteered teaching art to local elementary students. Whether I'm in the studio, the classroom, or on stage as a singer and performer, I'm always doing the same thing: sharing culture and connecting people through art.</p>
-      <div class="person-creds">
-        <span class="person-cred" style="border-color:rgba(247,244,239,0.15);color:rgba(247,244,239,0.55);">Williams College</span>
-        <span class="person-cred" style="border-color:rgba(247,244,239,0.15);color:rgba(247,244,239,0.55);">Printmaker &amp; Painter</span>
-        <span class="person-cred" style="border-color:rgba(247,244,239,0.15);color:rgba(247,244,239,0.55);">Fulbright ETA · Italy</span>
-      </div>
-      <a class="btn-book mango" href="https://calendly.com/rootsyrutas/30min" target="_blank" style="background:var(--warm);">📅 Book with Daniela</a>
-    </div>
-  </div>
-
-  <!-- Art Prints -->
-  <div class="art-prints">
-    <div class="section-header" style="margin-bottom:40px;flex-direction:column;align-items:center;text-align:center;">
-      <div>
-        <h2 class="section-headline" style="color:white;">Limited edition <em style="color:var(--warm);">original prints</em></h2>
-      </div>
-    </div>
-    <div class="art-grid">
-      <div class="art-item">
-        <div class="art-thumb" style="background:url('images/art-thumb-1.jpg') center/cover no-repeat;">
-        </div>
-        <div class="art-info">
-          <div class="art-title">Mangos Galore</div>
-          <span class="art-edition">Edition 1 of 14 · Signed Original</span>
-          <div class="art-row"><span class="art-price">$180</span><button class="btn-sm" style="background:var(--warm);">Coming Soon</button></div>
-        </div>
-      </div>
-      <div class="art-item">
-        <div class="art-thumb" style="background:url('images/art-thumb-2.jpg') center/cover no-repeat;">
-        </div>
-        <div class="art-info">
-          <div class="art-title">Atabey</div>
-          <span class="art-edition">Edition 1 of 7 · Signed Original</span>
-          <div class="art-row"><span class="art-price">$220</span><button class="btn-sm" style="background:var(--warm);">Coming Soon</button></div>
-        </div>
-      </div>
-      <div class="art-item">
-        <div class="art-thumb" style="background:url('images/art-thumb-3.jpg') center/cover no-repeat;">
-        </div>
-        <div class="art-info">
-          <div class="art-title">The Orange</div>
-          <span class="art-edition">Edition 1 of 5 · Signed Original</span>
-          <div class="art-row"><span class="art-price">$280</span><button class="btn-sm" style="background:var(--warm);">Coming Soon</button></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Snail Mail -->
-  <div class="snail-section">
-    <div style="text-align:center;">
-      <span class="snail-eyebrow">coming soon</span>
-      <h2 class="snail-title">Snail Mail<br><em>Club</em></h2>
-      <p class="snail-body">Monthly hand-pressed prints and cultural love letters from Daniela — delivered to your door. Because some things deserve to be physical. A little piece of home, every month. Launching soon — join the waitlist to be first in line.</p>
-      <div style="display:flex;gap:0;margin:20px auto 0;border:1.5px solid rgba(255,255,255,0.4);border-radius:2px;overflow:hidden;max-width:340px;"><input type="email" placeholder="tu@email.com" style="flex:1;padding:13px 16px;border:none;background:rgba(255,255,255,0.15);color:white;font-size:15px;font-family:'Plus Jakarta Sans',sans-serif;outline:none;" /><button style="background:white;color:var(--warm);padding:13px 18px;border:none;font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap;">Notify Me</button></div>
-    </div>
-    <div class="snail-price-box">
-      <div class="snail-price">$15</div>
-      <div class="snail-per">/month · when we launch</div>
-      <div class="snail-features" style="margin-top:20px;">
-        <div class="snail-feat">✉️ One hand-pressed limited print per month</div>
-        <div class="snail-feat">🌿 Personal note from Daniela</div>
-        <div class="snail-feat">🌍 Ships internationally</div>
-        <div class="snail-feat">🎁 Surprise cultural extras</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- HOLISTIC AVENUE -->
-  <div style="background:var(--deep);border-radius:4px;padding:24px 28px;margin:16px 56px 0;display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
-    <p style="font-size:15px;color:rgba(247,244,239,0.65);line-height:1.65;flex:1;">Art and identity are just one part of the picture. Continue your journey through our studio:<br><br>Sharpen your career and finances in the <span style="color:var(--gold);cursor:pointer;" onclick="showPage('strategy')">Strategy Studio →</span> &nbsp; Optimize your vitality in the <span style="color:var(--gold);cursor:pointer;" onclick="showPage('wellness')">Wellness Lab →</span></p>
-  </div>
-
-  <footer>
-    <div class="footer-top">
-      <div><div class="footer-brand">Roots <em>y</em> Rutas</div><div class="footer-tagline">honor your roots · shape your routes</div></div>
-      <div><div class="footer-col-title">Art Annex</div><ul class="footer-links"><li><a href="#">Shop Prints</a></li><li><a href="#">Snail Mail Club</a></li><li><a href="https://calendly.com/rootsyrutas/30min" target="_blank">Book Daniela</a></li></ul></div>
-      <div><div class="footer-col-title">Navigate</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a href="/y-ahora-que/">&iquest;Y ahora qu&eacute;?</a></li><li><a onclick="showPage('art')">Art Annex</a></li><li><a onclick="showPage('loft')">Composition Loft</a></li><li><a onclick="showPage('strategy')">Strategy Studio</a></li><li><a onclick="showPage('wellness')">Wellness Lab</a></li><li><a onclick="showPage('tienda')">La Tienda Familiar</a></li></ul></div>
-      <div><div class="footer-col-title">Connect</div><ul class="footer-links"><li><a href="#">Instagram</a></li><li><a href="mailto:areyesovalles@gmail.com">Email</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><span class="footer-copy">© 2026 Roots y Rutas · The Art Annex</span></div>
-  </footer>
-</div>
-</script>
-
-<script type="text/html" id="tpl-page-loft">
-
-  <section class="page-hero" style="display:flex;align-items:center;justify-content:center;">
-    <div class="page-hero-img" style="background:
-      linear-gradient(to bottom, rgba(13,26,28,0.15) 0%, rgba(13,26,28,0.85) 100%),
-      url('images/hero-loft.jpg') center 8%/cover no-repeat;">
-    </div>
-    <div class="page-hero-overlay"></div>
-    <div class="page-hero-content" style="text-align:center;width:100%;padding:0 56px;">
-      <span class="page-hero-eyebrow" style="font-size:22px;">Piano · Composition · Web Design</span>
-      <h1 class="page-hero-title">The Composition<br><em style="color:var(--sand);">Loft</em></h1>
-      <p class="page-hero-sub" style="margin-left:auto;margin-right:auto;">Pianist and web designer bringing Dominican roots to everything he creates.</p>
-    </div>
-  </section>
-
-  <div class="person-intro" style="background:var(--deep);">
-    <div class="person-photo" style="background:url('images/person-daniel.jpg') center 20%/cover no-repeat; min-height:500px;"></div>
-    <div class="person-text" style="background:var(--deep);">
-      <div class="person-name" style="color:white;">Daniel<br></div>
-      <div class="person-role" style="color:var(--mid);">Resident Composer · Composition Loft</div>
-      <p class="person-bio" style="color:rgba(247,244,239,0.65);">I'm a pianist, web designer, and resident composer at Roots y Rutas, where I shape how people see and feel the things they care about, through music and design. A double major in Computer Science and Music at Williams College, I study classical and jazz piano alongside composition and music theory, and build websites that help people and small businesses tell their stories online. What ties the two together is a single idea: composition — whether I'm arranging a piece at the piano or laying out a page on a screen, the work is the same at heart, shaping a perspective and guiding someone gently through it.</p>
-      <p class="person-bio" style="color:rgba(247,244,239,0.65);">That sense of perspective is rooted in family. Growing up in Lawrence, Massachusetts, in a Dominican household that built a life on the hyphen, I learned early that the way a story is framed changes how it's felt — and I carry that into everything I make, from the mood of a melody to the flow of a homepage. I'm equally devoted to teaching and access, having led coding workshops for kids at my local public library and guided young students through building their very first websites. Across all of it, the joy is the same one I find in music: the simple pleasure of making something and sharing it with others.</p>
-      <div class="person-creds">
-        <span class="person-cred" style="border-color:rgba(247,244,239,0.15);color:rgba(247,244,239,0.55);">Williams College</span>
-        <span class="person-cred" style="border-color:rgba(247,244,239,0.15);color:rgba(247,244,239,0.55);">Piano &amp; Composition</span>
-        <span class="person-cred" style="border-color:rgba(247,244,239,0.15);color:rgba(247,244,239,0.55);">Web Design</span>
-      </div>
-      <a class="btn-book" href="https://www.youtube.com/@d.r_piano" target="_blank">▶ Watch on YouTube</a>
-    </div>
-  </div>
-
-  <!-- Piano Lessons -->
-  <div class="snail-section" style="background:var(--teal);">
-    <div style="text-align:center;">
-      <span class="snail-eyebrow">coming soon</span>
-      <h2 class="snail-title">Piano<br><em>Lessons</em></h2>
-      <p class="snail-body">One-on-one and online piano lessons for players at every level, from curious first-timers to advanced students. Your very first lesson is always free, so you can see whether it's a good fit before committing to anything.</p>
-      <div style="display:flex;gap:0;margin:20px auto 0;border:1.5px solid rgba(255,255,255,0.4);border-radius:2px;overflow:hidden;max-width:340px;"><input type="email" placeholder="tu@email.com" style="flex:1;padding:13px 16px;border:none;background:rgba(255,255,255,0.15);color:white;font-size:15px;font-family:'Plus Jakarta Sans',sans-serif;outline:none;" /><button style="background:white;color:var(--teal);padding:13px 18px;border:none;font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap;">Notify Me</button></div>
-    </div>
-    <div class="snail-price-box">
-      <div class="snail-price">$40–45</div>
-      <div class="snail-per">/hour · once lessons open</div>
-      <div class="snail-features" style="margin-top:20px;">
-        <div class="snail-feat">🎹 One-on-one or online</div>
-        <div class="snail-feat">🎼 Every level welcome</div>
-        <div class="snail-feat">🎁 First lesson free</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Web Design -->
-  <div class="snail-section" style="background:#E8D9B5;">
-    <div style="text-align:center;">
-      <span class="snail-eyebrow" style="color:rgba(13,26,28,0.55);">coming soon</span>
-      <h2 class="snail-title" style="color:var(--deep);">Web<br><em>Design</em></h2>
-      <p class="snail-body" style="color:rgba(13,26,28,0.75);">Custom sites for people and small businesses who want an online home that actually sounds like them — built by a composer who treats every page like a piece of music. Keep an eye on this page.</p>
-      <div style="display:flex;gap:0;margin:20px auto 0;border:1.5px solid rgba(13,26,28,0.3);border-radius:2px;overflow:hidden;max-width:340px;"><input type="email" placeholder="tu@email.com" style="flex:1;padding:13px 16px;border:none;background:rgba(255,255,255,0.5);color:var(--deep);font-size:15px;font-family:'Plus Jakarta Sans',sans-serif;outline:none;" /><button style="background:var(--deep);color:var(--sand);padding:13px 18px;border:none;font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap;">Notify Me</button></div>
-    </div>
-    <div class="snail-price-box" style="background:rgba(13,26,28,0.08);">
-      <div class="snail-price" style="color:var(--deep);">Custom</div>
-      <div class="snail-per" style="color:rgba(13,26,28,0.6);">quote on request</div>
-      <div class="snail-features" style="margin-top:20px;">
-        <div class="snail-feat" style="color:rgba(13,26,28,0.75);border-bottom:1px solid rgba(13,26,28,0.12);">🖥️ Custom-built sites</div>
-        <div class="snail-feat" style="color:rgba(13,26,28,0.75);border-bottom:1px solid rgba(13,26,28,0.12);">🎨 Design rooted in your story</div>
-        <div class="snail-feat" style="color:rgba(13,26,28,0.75);">🚀 Launching soon</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- HOLISTIC AVENUE -->
-  <div style="background:var(--deep);border-radius:4px;padding:24px 28px;margin:16px 56px 0;display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
-    <p style="font-size:15px;color:rgba(247,244,239,0.65);line-height:1.65;flex:1;">Music and design are just one part of the studio. Continue your journey through our studio:<br><br>Meet Daniela in the <span style="color:var(--warm);cursor:pointer;" onclick="showPage('art')">Art Annex →</span> &nbsp; Sharpen your career and finances in the <span style="color:var(--warm);cursor:pointer;" onclick="showPage('strategy')">Strategy Studio →</span></p>
-  </div>
-
-  <footer>
-    <div class="footer-top">
-      <div><div class="footer-brand">Roots <em>y</em> Rutas</div><div class="footer-tagline">honor your roots · shape your routes</div></div>
-      <div><div class="footer-col-title">Composition Loft</div><ul class="footer-links"><li><a href="#">Piano Lessons</a></li><li><a href="#">Web Design</a></li><li><a href="https://www.youtube.com/@d.r_piano" target="_blank">YouTube</a></li></ul></div>
-      <div><div class="footer-col-title">Navigate</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a href="/y-ahora-que/">&iquest;Y ahora qu&eacute;?</a></li><li><a onclick="showPage('art')">Art Annex</a></li><li><a onclick="showPage('loft')">Composition Loft</a></li><li><a onclick="showPage('strategy')">Strategy Studio</a></li><li><a onclick="showPage('wellness')">Wellness Lab</a></li><li><a onclick="showPage('tienda')">La Tienda Familiar</a></li></ul></div>
-      <div><div class="footer-col-title">Connect</div><ul class="footer-links"><li><a href="#">Instagram</a></li><li><a href="mailto:areyesovalles@gmail.com">Email</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><span class="footer-copy">© 2026 Roots y Rutas · The Composition Loft</span></div>
-  </footer>
-</div>
-</script>
-
 <script type="text/html" id="tpl-page-about">
 
   <section class="page-hero" style="align-items:center;justify-content:center;">
@@ -2775,7 +2037,7 @@ footer {
       <h2 class="cta-band-headline">Let's build your<br><em>ruta together.</em></h2>
     </div>
     <div class="cta-band-actions" style="align-items:center;">
-      <a class="btn-white" href="https://calendly.com/rootsyrutas/30min" target="_blank">📅 Book a Free Discovery Call</a>
+      <a class="btn-white" href="/y-ahora-que/">Start with &iquest;Y ahora qu&eacute;? &rarr;</a>
       <a class="btn-white-outline" href="mailto:areyesovalles@gmail.com">Or email us directly</a>
     </div>
   </div>
@@ -2785,8 +2047,7 @@ footer {
   <footer>
     <div class="footer-top">
       <div><div class="footer-brand">Roots <em>y</em> Rutas</div><div class="footer-tagline">honor your roots · shape your routes</div></div>
-      <div><div class="footer-col-title">Work With Us</div><ul class="footer-links"><li><a onclick="showPage('art')">Art Annex</a></li><li><a onclick="showPage('loft')">Composition Loft</a></li><li><a onclick="showPage('strategy')">Strategy Studio</a></li><li><a onclick="showPage('wellness')">Wellness Lab</a></li></ul></div>
-      <div><div class="footer-col-title">Navigate</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a href="https://calendly.com/rootsyrutas/30min" target="_blank">Book a Call</a></li><li><a href="mailto:areyesovalles@gmail.com">Contact</a></li></ul></div>
+      <div><div class="footer-col-title">Navigate</div><ul class="footer-links"><li><a href="/y-ahora-que/">&iquest;Y ahora qu&eacute;?</a></li><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('tienda')">La Tienda Familiar</a></li><li><a href="mailto:areyesovalles@gmail.com">Contact</a></li></ul></div>
       <div><div class="footer-col-title">Connect</div><ul class="footer-links"><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">YouTube</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span class="footer-copy">© 2026 Roots y Rutas · Dominican-Puerto Rican First-Gen Family Collective</span></div>
@@ -2801,22 +2062,153 @@ footer {
     <div class="page-hero-img" style="background:linear-gradient(to bottom, rgba(10,22,40,0.8) 0%, rgba(10,22,40,0.95) 100%),linear-gradient(135deg, #0A1628, #1B3A5C);"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content" style="text-align:center;width:100%;">
-      <span class="page-hero-eyebrow" style="font-size:20px;letter-spacing:4px;">recursos gratuitos · para nuestra gente</span>
+      <span class="page-hero-eyebrow" style="font-size:20px;letter-spacing:4px;">hecho en familia · para nuestra gente</span>
       <h1 class="page-hero-title">La Tienda<br><em>Familiar</em></h1>
     </div>
   </section>
 
-  <div style="padding:100px 56px;text-align:center;background:var(--off-white);min-height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
-    <span style="font-family:'Caveat',cursive;font-size:16px;color:var(--warm);letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:20px;">Próximamente</span>
-    <h2 style="font-family:'Fraunces',serif;font-size:clamp(36px,5vw,64px);font-weight:300;color:var(--deep);line-height:1.1;margin-bottom:20px;">Something<br><em>good is coming.</em></h2>
-    <p style="font-size:16px;font-weight:300;color:rgba(13,26,28,0.6);line-height:1.8;max-width:520px;margin-bottom:40px;">La Tienda Familiar is under construction. We're building something rooted, intentional, and made for our community. Check back soon.</p>
-    <a class="btn-book" onclick="showPage('home')" style="cursor:pointer;">&#8592; Back to Home</a>
+  <div class="products-section">
+    <div class="section-header" style="justify-content:center;text-align:center;">
+      <div>
+        <h2 class="section-headline">Digital tools <em>built to move you forward</em></h2>
+        <p style="font-size:15px;font-weight:300;color:rgba(13,26,28,0.65);line-height:1.8;max-width:680px;margin:12px auto 0;">These tools include workout programs, nutrition guides, and meal resources designed around the way real families eat and move. Start with what fits, go deeper when you're ready.</p>
+      </div>
+    </div>
+
+    <div class="products-grid" style="grid-template-columns:repeat(2,1fr);max-width:900px;margin-left:auto;margin-right:auto;">
+
+      <!-- Workout Programs -->
+      <div class="product-item">
+        <div class="product-thumb" style="background:linear-gradient(135deg,#1B4A2E,#2D5A27);">
+          <div class="product-avail yes">Available</div>
+          <div class="product-thumb-text">Workout<br>Programs</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Workout Programs (each)</div>
+          <div class="product-blurb">Custom programs by HecofaCoach, each with a matching Excel tracker. Choose your style: Balanced, Powerlifting, Wellness, Bikini Focus, Minimal Equipment, Rolling Hypertrophy, and more.</div>
+          <div class="product-footer-row">
+            <div><span class="product-price-note">Per program · Excel tracker included</span></div>
+            <a class="btn-sm" style="background:var(--green);text-decoration:none;color:white;" href="https://rootsyrutas.gumroad.com/" target="_blank" rel="noopener">Browse Programs</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bundle -->
+      <div class="product-item">
+        <div class="product-thumb" style="background:linear-gradient(135deg,#3a2a0a,#8a6a1a);">
+          <div class="product-avail yes">Best Value</div>
+          <div class="product-thumb-text">Wellness Lab<br>Bundle</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">The Wellness Lab Bundle</div>
+          <div class="product-blurb">All 9 workout programs with Excel trackers, the Nutrition &amp; Macros Guide, and the Healthy Latino Kitchen recipe book. Every tool, one price.</div>
+          <div class="product-footer-row">
+            <div><span class="product-price-note">instant download</span></div>
+            <a class="btn-sm" style="background:var(--gold);color:var(--deep);font-weight:600;text-decoration:none;" href="https://rootsyrutas.gumroad.com/l/awigit" target="_blank" rel="noopener">Get Bundle</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Healthy Latino Kitchen -->
+      <div class="product-item">
+        <div class="product-thumb" style="background:linear-gradient(135deg,#8b3a1a,#c8541a);">
+          <div class="product-avail yes">Available</div>
+          <div class="product-thumb-text">Healthy Latino<br>Kitchen</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Healthy Latino Kitchen</div>
+          <div class="product-blurb">11 lightened-up family recipes (sancocho, pastelón, mangú, habichuelas, and more) with healthy swaps and scaling guides.</div>
+          <div class="product-footer-row">
+            <div><span class="product-price-note">PDF · instant download</span></div>
+            <a class="btn-sm" style="background:var(--green);text-decoration:none;color:white;" href="https://rootsyrutas.gumroad.com/l/kgtia" target="_blank" rel="noopener">Buy on Gumroad</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nutrition & Macros Guide -->
+      <div class="product-item">
+        <div class="product-thumb" style="background:linear-gradient(135deg,#075E52,var(--teal));">
+          <div class="product-avail yes">Available</div>
+          <div class="product-thumb-text">Nutrition &amp;<br>Macros Guide</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Nutrition &amp; Macros Guide</div>
+          <div class="product-blurb">The complete coaching companion: calories, macros, tracking, satiety, diet breaks, meal prep, and more, all in plain language.</div>
+          <div class="product-footer-row">
+            <div><span class="product-price-note">PDF · instant download</span></div>
+            <a class="btn-sm" style="background:var(--teal);text-decoration:none;color:white;" href="https://rootsyrutas.gumroad.com/l/rrianx" target="_blank" rel="noopener">Buy on Gumroad</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Disclaimer -->
+    <p style="font-size:11.5px;color:rgba(13,26,28,0.4);line-height:1.7;margin-top:20px;white-space:nowrap;">Digital products are for general informational purposes only and are not medical or nutritional advice. Consult a qualified professional before making changes to your diet or exercise routine.</p>
+
+  </div>
+
+  <!-- FREE RESOURCES -->
+  <div class="products-section" style="background:var(--off-white);border-top:2px solid var(--teal);">
+    <div class="section-header" style="justify-content:center;text-align:center;">
+      <div>
+        <h2 class="section-headline" style="text-align:center;">Free resources <em>for everyone</em></h2>
+      </div>
+    </div>
+    <div class="products-grid" style="grid-template-columns:repeat(3,1fr);max-width:900px;margin-left:auto;margin-right:auto;">
+
+      <div class="product-item">
+        <div class="product-thumb" style="background:linear-gradient(135deg,#0d5c3a,#1a8a5c);">
+          <div class="product-avail yes">Free</div>
+          <div class="product-thumb-text">Grocery<br>Guide</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Grocery Guide</div>
+          <div class="product-blurb">A simple, budget-friendly shopping list to help you eat well without breaking the bank. Easy to use, no experience needed.</div>
+          <div class="product-footer-row">
+            <div><div class="product-price-display">Free</div><span class="product-price-note">Instant download</span></div>
+            <a class="btn-sm" style="background:var(--teal);text-decoration:none;color:white;" href="resources/RootsyRutas_BudgetGroceryList.pdf" target="_blank" rel="noopener">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-thumb" style="background:linear-gradient(135deg,#1a3a5c,#5c3a1a);">
+          <div class="product-avail yes">Free</div>
+          <div class="product-thumb-text">Lift Form<br>Checklists</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Lift Form Checklists</div>
+          <div class="product-blurb">Step-by-step form guides for the Bench Press, Squat, and Deadlift: safe cues and breakdowns for beginners and anyone getting back at it.</div>
+          <div class="product-footer-row">
+            <div><div class="product-price-display">Free</div><span class="product-price-note">3 guides · instant download</span></div>
+            <a class="btn-sm" style="background:var(--teal);text-decoration:none;color:white;" href="resources/Roots-y-Rutas_Bench-Squat-Deadlift.pdf" target="_blank" rel="noopener">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-thumb" style="background:linear-gradient(135deg,#1a5c3a,var(--green));">
+          <div class="product-avail yes">Free</div>
+          <div class="product-thumb-text">Ladder Milestone<br>System</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Ladder Milestone System</div>
+          <div class="product-blurb">A simple progress tracker that celebrates small wins and keeps you moving forward, no matter where you're starting from.</div>
+          <div class="product-footer-row">
+            <div><div class="product-price-display">Free</div><span class="product-price-note">Instant download</span></div>
+            <a class="btn-sm" style="background:var(--teal);text-decoration:none;color:white;" href="resources/Roots-y-Rutas_The-Ladder.pdf" target="_blank" rel="noopener">Download</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <footer>
     <div class="footer-top">
       <div><div class="footer-brand">Roots <em>y</em> Rutas</div><div class="footer-tagline">honor your roots · shape your routes</div></div>
-      <div><div class="footer-col-title">Navigate</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a href="/y-ahora-que/">&iquest;Y ahora qu&eacute;?</a></li><li><a onclick="showPage('art')">Art Annex</a></li><li><a onclick="showPage('loft')">Composition Loft</a></li><li><a onclick="showPage('strategy')">Strategy Studio</a></li><li><a onclick="showPage('wellness')">Wellness Lab</a></li><li><a onclick="showPage('tienda')">La Tienda Familiar</a></li></ul></div>
+      <div><div class="footer-col-title">Navigate</div><ul class="footer-links"><li><a href="/y-ahora-que/">&iquest;Y ahora qu&eacute;?</a></li><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('tienda')">La Tienda Familiar</a></li><li><a onclick="showPage('about')">About</a></li></ul></div>
       <div><div class="footer-col-title">Resources</div><ul class="footer-links"><li><a href="#">Mexico Itinerary</a></li><li><a href="#">Baby Shower Templates</a></li><li><a href="#">La Asistente</a></li><li><a href="#">Newsletter</a></li></ul></div>
       <div><div class="footer-col-title">Connect</div><ul class="footer-links"><li><a href="https://instagram.com/rootsyrutas" target="_blank">Instagram</a></li><li><a href="mailto:areyesovalles@gmail.com">Email</a></li></ul></div>
     </div>
@@ -2830,7 +2222,7 @@ footer {
 function showPage(page, opts) {
   opts = opts || {};
   var tpl = document.getElementById('tpl-page-' + page);
-  if (!tpl) return;
+  if (!tpl) { page = 'home'; tpl = document.getElementById('tpl-page-home'); }
 
   // Clear and inject
   var app = document.getElementById('app');

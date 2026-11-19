@@ -3782,8 +3782,8 @@ function setLang(l){ lang=l; try{localStorage.setItem("yaq_lang",l)}catch(e){} a
 
 function buildSelects(){
   const st = document.getElementById("stage"); const cur = filters.stage;
-  const stages = [...new Set(OPPS.map(o=>o.stage))];
-  st.innerHTML = `<option value="all">${tt("all_stages")}</option>`+stages.map(s=>`<option value="${esc(s)}">${esc(STAGES[s]?.[lang]||s)}</option>`).join("");
+  const ME={new:["Just graduated","Recién graduado/a"],early:["Working 2 to 7 years","Trabajando de 2 a 7 años"],mid:["7+ years, want to switch","Más de 7 años, quiero cambiar"],gs:["In grad school","En un posgrado"],gsdone:["Finishing or finished grad school","Terminando o terminé un posgrado"],break:["Want a break or sabbatical","Quiero una pausa o un sabático"],return:["Coming back after a break","Regresando después de una pausa"]};
+  st.innerHTML = `<option value="all">${tt("all_stages")}</option>`+Object.entries(ME).map(([k,v])=>`<option value="${k}">${esc(lang==="es"?v[1]:v[0])}</option>`).join("");
   st.value = cur;
   const cats = document.getElementById("cats");
   cats.innerHTML = ["All",...Object.keys(CATS)].map(c=>`<button type="button" class="chip" data-cat="${esc(c)}" aria-pressed="${filters.cat===c}">${esc(c==="All"?tt("all"):CATS[c][lang])}</button>`).join("");
@@ -3851,7 +3851,7 @@ function renderExplore(){
   const list = OPPS.filter(o=>{
     if(filters.match && !filters.match.has(o.id)) return false;
     if(filters.cat!=="All" && o.cat!==filters.cat) return false;
-    if(filters.stage!=="all" && o.stage!==filters.stage) return false;
+    if(filters.stage!=="all"){ const g=TAGS[o.id]||{}; const el=g.el||["new","early","mid","gs","gsdone","break","return"]; if(!el.includes(filters.stage)) return false; }
     if(filters.open && !/^(open\b|rolling)/i.test(o.status)) return false;
     if(filters.noncit && /citizens only|citizens or nationals only/i.test(o.cit)) return false;
     if(q && !(o.name+" "+o.what+" "+o.where+" "+o.who+" "+o.cat).toLowerCase().includes(q)) return false;

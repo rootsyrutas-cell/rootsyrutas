@@ -215,6 +215,10 @@ details.row>summary::-webkit-details-marker{display:none}
 .rmeta{font-size:12px;color:var(--muted)}
 .glink{font-size:13px;color:var(--teal);text-decoration:underline;text-underline-offset:2px}
 @media (max-width:520px){nav a{padding:10px 10px;font-size:14.5px}.ghead{margin-top:14px}}
+.rgroup{font-family:var(--display);color:var(--teal);font-size:22px;margin:22px 0 4px}
+.linkbtn{background:none;border:0;padding:0;color:var(--teal);text-decoration:underline;font:inherit;cursor:pointer}
+details.row .flag{margin:6px 0 0;font-size:12.5px}
+.rbody .why{margin:0}
 </style>
 </head>
 <body>
@@ -240,7 +244,7 @@ details.row>summary::-webkit-details-marker{display:none}
   <section class="view" id="view-path">
     <div class="intro">
       <h2 data-t="pa_title">Not sure what to apply to? <em>Start here.</em></h2>
-      <p data-t="pa_sub">Answer five quick questions. You don't need to know anything about fellowships yet. Whether you just graduated, want to switch, need a break or are coming back, we'll show what fits your life right now, the skills you already have, and your next three steps.</p>
+      <p data-t="pa_sub">Answer six quick questions. You don't need to know anything about fellowships yet. Whether you just graduated, want to switch, need a break or are coming back, we'll show what fits your life right now, the skills you already have, and your next three steps.</p>
     </div>
     <div class="quiz" id="quiz"></div>
     <div class="results" id="results"></div>
@@ -347,9 +351,19 @@ const TAGS = {
 "st": [
 "new",
 "early",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "fulbright-english-teaching-assistant-eta": {
 "i": [
@@ -363,7 +377,16 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "boren-fellowship-graduate-students": {
 "i": [
@@ -375,9 +398,13 @@ const TAGS = {
 "fmt": "ft",
 "reloc": 1,
 "st": [
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"gs"
+]
 },
 "jet-programme-japan": {
 "i": [
@@ -391,7 +418,16 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "teaching-assistant-program-in-france-tap": {
 "i": [
@@ -405,7 +441,17 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+],
+"age": 35
 },
 "auxiliares-de-conversaci-n-nalcap-spain": {
 "i": [
@@ -420,7 +466,16 @@ const TAGS = {
 "early",
 "mid"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "princeton-in-latin-america-pila": {
 "i": [
@@ -433,7 +488,11 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early"
+]
 },
 "luce-scholars-program": {
 "i": [
@@ -447,7 +506,17 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+],
+"age": 32
 },
 "peace-corps": {
 "i": [
@@ -463,7 +532,16 @@ const TAGS = {
 "mid",
 "break"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "chci-public-policy-fellowship": {
 "i": [
@@ -476,7 +554,11 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early"
+]
 },
 "chci-postgraduate-fellowship": {
 "i": [
@@ -487,9 +569,14 @@ const TAGS = {
 "fmt": "ft",
 "reloc": 1,
 "st": [
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"gs",
+"gsdone"
+]
 },
 "paul-daisy-soros-fellowships-for-new-ame": {
 "i": [
@@ -501,9 +588,20 @@ const TAGS = {
 "st": [
 "new",
 "early",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+],
+"age": 30
 },
 "coro-fellows-program-in-public-affairs": {
 "i": [
@@ -517,7 +615,13 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"gs",
+"gsdone"
+]
 },
 "bill-emerson-national-hunger-fellowship": {
 "i": [
@@ -531,7 +635,13 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"gs",
+"gsdone"
+]
 },
 "americorps-incl-vista": {
 "i": [
@@ -546,7 +656,16 @@ const TAGS = {
 "early",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "rangel-graduate-fellowship": {
 "i": [
@@ -561,7 +680,16 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "pickering-foreign-affairs-fellowship": {
 "i": [
@@ -576,7 +704,16 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "coop-careers-fellowship": {
 "i": [
@@ -589,7 +726,11 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early"
+]
 },
 "dearcc-new-work-foundation": {
 "i": [
@@ -602,7 +743,10 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new"
+]
 },
 "forage-job-simulations": {
 "i": [
@@ -615,7 +759,16 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "bluedot-impact-courses-agi-strategy-fron": {
 "i": [
@@ -629,9 +782,19 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "caidp-ai-policy-clinic": {
 "i": [
@@ -645,9 +808,19 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "iaps-ai-policy-fellowship": {
 "i": [
@@ -661,7 +834,14 @@ const TAGS = {
 "early",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"early",
+"mid",
+"gsdone",
+"break",
+"return"
+]
 },
 "techcongress-congressional-innovation-fe": {
 "i": [
@@ -673,9 +853,15 @@ const TAGS = {
 "reloc": 1,
 "st": [
 "early",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"early",
+"gs",
+"gsdone"
+]
 },
 "horizon-fellowship": {
 "i": [
@@ -689,7 +875,13 @@ const TAGS = {
 "early",
 "mid"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"early",
+"mid",
+"gsdone",
+"break"
+]
 },
 "u-s-tech-force": {
 "i": [
@@ -703,7 +895,16 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "arcadia-impact-ai-governance-taskforce": {
 "i": [
@@ -716,7 +917,12 @@ const TAGS = {
 "st": [
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"mid",
+"break",
+"return"
+]
 },
 "immigrants-rising-scholarship-and-fellow": {
 "i": [
@@ -729,10 +935,20 @@ const TAGS = {
 "st": [
 "new",
 "early",
-"gs"
+"gs",
+"gsdone"
 ],
 "cit": "broad",
-"dir": 1
+"dir": 1,
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "80-000-hours-job-board": {
 "i": [
@@ -747,10 +963,20 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
 "cit": "broad",
-"dir": 1
+"dir": 1,
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "80000-hours-career-advising": {
 "i": [
@@ -767,9 +993,19 @@ const TAGS = {
 "mid",
 "gs",
 "break",
-"return"
+"return",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "successif-ai-career-transition-support": {
 "i": [
@@ -784,7 +1020,12 @@ const TAGS = {
 "break",
 "return"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"mid",
+"break",
+"return"
+]
 },
 "rhodes-scholarship-u-s": {
 "i": [
@@ -797,7 +1038,14 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"gs",
+"gsdone"
+],
+"age": 24
 },
 "marshall-scholarship": {
 "i": [
@@ -811,7 +1059,12 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"gs"
+]
 },
 "mitchell-scholarship": {
 "i": [
@@ -825,7 +1078,17 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+],
+"age": 29
 },
 "gates-cambridge-scholarship": {
 "i": [
@@ -839,9 +1102,19 @@ const TAGS = {
 "st": [
 "new",
 "early",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "schwarzman-scholars": {
 "i": [
@@ -856,7 +1129,17 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+],
+"age": 28
 },
 "yenching-academy-peking-university": {
 "i": [
@@ -870,7 +1153,16 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "critical-language-scholarship-cls": {
 "i": [
@@ -881,9 +1173,14 @@ const TAGS = {
 "reloc": 1,
 "st": [
 "new",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"gs"
+]
 },
 "princeton-in-asia": {
 "i": [
@@ -897,7 +1194,13 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"gs",
+"gsdone"
+]
 },
 "princeton-in-africa": {
 "i": [
@@ -910,7 +1213,12 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"gsdone"
+]
 },
 "epik-english-program-in-korea": {
 "i": [
@@ -924,7 +1232,16 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "english-opens-doors-chile": {
 "i": [
@@ -938,7 +1255,16 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "u-s-teaching-assistantships-in-austria": {
 "i": [
@@ -951,7 +1277,14 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"gs",
+"gsdone"
+],
+"age": 30
 },
 "congress-bundestag-youth-exchange-for-yo": {
 "i": [
@@ -964,7 +1297,13 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"gs"
+],
+"age": 24
 },
 "daad-study-scholarships-germany": {
 "i": [
@@ -978,9 +1317,16 @@ const TAGS = {
 "st": [
 "new",
 "early",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"gs",
+"gsdone"
+]
 },
 "erasmus-mundus-joint-master-s-scholarshi": {
 "i": [
@@ -994,9 +1340,19 @@ const TAGS = {
 "st": [
 "new",
 "early",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "rotary-peace-fellowship": {
 "i": [
@@ -1013,7 +1369,14 @@ const TAGS = {
 "mid",
 "break"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"early",
+"mid",
+"gsdone",
+"break",
+"return"
+]
 },
 "thomas-j-watson-fellowship": {
 "i": [
@@ -1025,7 +1388,10 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new"
+]
 },
 "teach-for-america": {
 "i": [
@@ -1040,7 +1406,16 @@ const TAGS = {
 "early",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "city-year": {
 "i": [
@@ -1052,7 +1427,12 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early"
+],
+"age": 25
 },
 "nyc-urban-fellows": {
 "i": [
@@ -1066,7 +1446,10 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new"
+]
 },
 "nyc-teaching-fellows": {
 "i": [
@@ -1081,7 +1464,16 @@ const TAGS = {
 "early",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "capital-fellows-programs-california": {
 "i": [
@@ -1095,7 +1487,13 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"gs",
+"gsdone"
+]
 },
 "mickey-leland-international-hunger-fello": {
 "i": [
@@ -1108,9 +1506,16 @@ const TAGS = {
 "reloc": 1,
 "st": [
 "early",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"early",
+"mid",
+"gs",
+"gsdone"
+]
 },
 "herbert-scoville-jr-peace-fellowship": {
 "i": [
@@ -1123,7 +1528,13 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"gs",
+"gsdone"
+]
 },
 "echoing-green-fellowship": {
 "i": [
@@ -1136,7 +1547,16 @@ const TAGS = {
 "early",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "hacu-national-internship-program": {
 "i": [
@@ -1148,9 +1568,14 @@ const TAGS = {
 "reloc": 1,
 "st": [
 "new",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"gs"
+]
 },
 "per-scholas": {
 "i": [
@@ -1166,7 +1591,16 @@ const TAGS = {
 "mid",
 "return"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "pursuit": {
 "i": [
@@ -1181,7 +1615,16 @@ const TAGS = {
 "early",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "launchcode": {
 "i": [
@@ -1197,7 +1640,16 @@ const TAGS = {
 "mid",
 "return"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "apprenti": {
 "i": [
@@ -1213,7 +1665,16 @@ const TAGS = {
 "mid",
 "return"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "mlt-mba-prep": {
 "i": [
@@ -1226,7 +1687,10 @@ const TAGS = {
 "st": [
 "early"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"early"
+]
 },
 "govai-dc-summer-fellowship": {
 "i": [
@@ -1240,9 +1704,19 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "govai-uk-summer-fellowship": {
 "i": [
@@ -1257,9 +1731,19 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "mats-ml-alignment-theory-scholars": {
 "i": [
@@ -1273,9 +1757,19 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "spar-supervised-program-for-alignment-re": {
 "i": [
@@ -1288,9 +1782,19 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "ai-safety-camp": {
 "i": [
@@ -1303,9 +1807,19 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "era-fellowship-cambridge": {
 "i": [
@@ -1319,9 +1833,19 @@ const TAGS = {
 "st": [
 "new",
 "early",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "pivotal-research-fellowship": {
 "i": [
@@ -1336,9 +1860,19 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "anthropic-fellows-program": {
 "i": [
@@ -1352,7 +1886,16 @@ const TAGS = {
 "early",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "tarbell-fellowship": {
 "i": [
@@ -1365,7 +1908,14 @@ const TAGS = {
 "early",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"early",
+"mid",
+"gsdone",
+"break",
+"return"
+]
 },
 "coefficient-giving-career-development-an": {
 "i": [
@@ -1382,9 +1932,19 @@ const TAGS = {
 "mid",
 "gs",
 "return",
-"break"
+"break",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "future-of-life-institute-phd-fellowships": {
 "i": [
@@ -1397,9 +1957,17 @@ const TAGS = {
 "reloc": 1,
 "st": [
 "new",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone"
+]
 },
 "cais-ai-safety-ethics-and-society-course": {
 "i": [
@@ -1412,9 +1980,19 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "nsf-graduate-research-fellowship-grfp": {
 "i": [
@@ -1426,9 +2004,14 @@ const TAGS = {
 "reloc": 1,
 "st": [
 "new",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"gs"
+]
 },
 "nih-postbaccalaureate-irta": {
 "i": [
@@ -1442,7 +2025,11 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early"
+]
 },
 "nih-department-of-bioethics-postbac-fell": {
 "i": [
@@ -1455,7 +2042,11 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early"
+]
 },
 "nih-graduate-partnerships-program": {
 "i": [
@@ -1466,9 +2057,13 @@ const TAGS = {
 "fmt": "ft",
 "reloc": 1,
 "st": [
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"gs"
+]
 },
 "ndseg-fellowship": {
 "i": [
@@ -1480,9 +2075,14 @@ const TAGS = {
 "reloc": 1,
 "st": [
 "new",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"gs"
+]
 },
 "hertz-fellowship": {
 "i": [
@@ -1494,9 +2094,14 @@ const TAGS = {
 "reloc": 1,
 "st": [
 "new",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"gs"
+]
 },
 "doe-computational-science-graduate-fello": {
 "i": [
@@ -1509,9 +2114,14 @@ const TAGS = {
 "reloc": 1,
 "st": [
 "new",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"gs"
+]
 },
 "national-physical-science-consortium-nps": {
 "i": [
@@ -1523,9 +2133,14 @@ const TAGS = {
 "reloc": 1,
 "st": [
 "new",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"gs"
+]
 },
 "gem-fellowship": {
 "i": [
@@ -1539,9 +2154,15 @@ const TAGS = {
 "st": [
 "new",
 "gs",
-"early"
+"early",
+"gsdone"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"gs"
+]
 },
 "churchill-scholarship": {
 "i": [
@@ -1555,7 +2176,10 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new"
+]
 },
 "aaas-science-technology-policy-fellowshi": {
 "i": [
@@ -1570,7 +2194,14 @@ const TAGS = {
 "mid",
 "early"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"gsdone",
+"early",
+"mid",
+"break",
+"return"
+]
 },
 "christine-mirzayan-science-technology-po": {
 "i": [
@@ -1582,9 +2213,15 @@ const TAGS = {
 "reloc": 1,
 "st": [
 "gs",
-"early"
+"early",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"gs",
+"gsdone",
+"early"
+]
 },
 "sea-grant-knauss-marine-policy-fellowshi": {
 "i": [
@@ -1596,9 +2233,14 @@ const TAGS = {
 "reloc": 1,
 "st": [
 "gs",
-"early"
+"early",
+"gsdone"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"gs",
+"gsdone"
+]
 },
 "orise-research-opportunities": {
 "i": [
@@ -1612,9 +2254,19 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "hispanic-scholarship-fund": {
 "i": [
@@ -1625,9 +2277,14 @@ const TAGS = {
 "reloc": 0,
 "st": [
 "new",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"gs"
+]
 },
 "point-foundation-scholarship": {
 "i": [
@@ -1638,9 +2295,14 @@ const TAGS = {
 "reloc": 0,
 "st": [
 "new",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"gs"
+]
 },
 "the-consortium-for-graduate-study-in-man": {
 "i": [
@@ -1653,7 +2315,13 @@ const TAGS = {
 "st": [
 "early"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"early",
+"mid",
+"break",
+"return"
+]
 },
 "toigo-foundation-mba-fellowship": {
 "i": [
@@ -1665,9 +2333,15 @@ const TAGS = {
 "reloc": 0,
 "st": [
 "early",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"early",
+"mid",
+"gs"
+]
 },
 "alpfa": {
 "i": [
@@ -1682,7 +2356,16 @@ const TAGS = {
 "early",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "shpe-society-of-hispanic-professional-en": {
 "i": [
@@ -1697,9 +2380,19 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "sacnas": {
 "i": [
@@ -1713,9 +2406,19 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "prospanica": {
 "i": [
@@ -1730,7 +2433,13 @@ const TAGS = {
 "early",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"early",
+"mid",
+"gs",
+"return"
+]
 },
 "latinas-in-tech": {
 "i": [
@@ -1746,7 +2455,16 @@ const TAGS = {
 "early",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "knight-hennessy-scholars-stanford": {
 "i": [
@@ -1761,7 +2479,13 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"gs",
+"gsdone"
+]
 },
 "year-up-united": {
 "i": [
@@ -1774,7 +2498,14 @@ const TAGS = {
 "new",
 "return"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"break",
+"return"
+],
+"age": 29
 },
 "thedream-us-scholarship": {
 "i": [
@@ -1786,7 +2517,10 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new"
+]
 },
 "high-impact-professionals": {
 "i": [
@@ -1803,7 +2537,13 @@ const TAGS = {
 "break",
 "return"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"early",
+"mid",
+"break",
+"return"
+]
 },
 "profellow-directory": {
 "i": [
@@ -1818,10 +2558,20 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
 "cit": "broad",
-"dir": 1
+"dir": 1,
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "ai-safety-opportunities-board-aisafety-c": {
 "i": [
@@ -1834,10 +2584,20 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
 "cit": "broad",
-"dir": 1
+"dir": 1,
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "fulbright-distinguished-awards-in-teachin": {
 "i": [
@@ -1851,7 +2611,12 @@ const TAGS = {
 "mid",
 "early"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"early",
+"mid",
+"break"
+]
 },
 "fulbright-teachers-for-global-classrooms": {
 "i": [
@@ -1865,7 +2630,12 @@ const TAGS = {
 "mid",
 "early"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"early",
+"mid",
+"break"
+]
 },
 "fulbright-leaders-for-global-schools-lgs": {
 "i": [
@@ -1879,7 +2649,11 @@ const TAGS = {
 "st": [
 "mid"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"mid",
+"break"
+]
 },
 "fulbright-teaching-excellence-and-achieve": {
 "i": [
@@ -1893,7 +2667,12 @@ const TAGS = {
 "early"
 ],
 "cit": "broad",
-"dir": 1
+"dir": 1,
+"el": [
+"early",
+"mid",
+"break"
+]
 },
 "fulbright-distinguished-awards-in-teach-i": {
 "i": [
@@ -1907,7 +2686,12 @@ const TAGS = {
 "early"
 ],
 "cit": "broad",
-"dir": 1
+"dir": 1,
+"el": [
+"early",
+"mid",
+"break"
+]
 },
 "path-forward-returnship-matcher": {
 "i": [
@@ -1922,7 +2706,10 @@ const TAGS = {
 "return"
 ],
 "cit": "broad",
-"dir": 1
+"dir": 1,
+"el": [
+"return"
+]
 },
 "irelaunch-return-to-work-programs": {
 "i": [
@@ -1937,7 +2724,10 @@ const TAGS = {
 "return"
 ],
 "cit": "broad",
-"dir": 1
+"dir": 1,
+"el": [
+"return"
+]
 },
 "nycedc-rebuilding-futures-returnship": {
 "i": [
@@ -1951,7 +2741,10 @@ const TAGS = {
 "mid",
 "return"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"return"
+]
 },
 "goldman-sachs-returnship": {
 "i": [
@@ -1964,7 +2757,10 @@ const TAGS = {
 "mid",
 "return"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"return"
+]
 },
 "fulbright-specialist-program": {
 "i": [
@@ -1978,7 +2774,12 @@ const TAGS = {
 "break",
 "mid"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"mid",
+"break",
+"return"
+]
 },
 "fulbright-finland-mid-career-professiona": {
 "i": [
@@ -1992,7 +2793,11 @@ const TAGS = {
 "break",
 "mid"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"mid",
+"break"
+]
 },
 "eisenhower-fellowships-usa-program": {
 "i": [
@@ -2006,7 +2811,11 @@ const TAGS = {
 "break",
 "mid"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"mid",
+"break"
+]
 },
 "nalcap-auxiliares-de-conversacion-spain": {
 "i": [
@@ -2022,7 +2831,16 @@ const TAGS = {
 "mid",
 "break"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "holapueblo-rural-spain": {
 "i": [
@@ -2036,7 +2854,16 @@ const TAGS = {
 "mid",
 "break"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "proyecto-arraigo-rural-spain": {
 "i": [
@@ -2050,7 +2877,16 @@ const TAGS = {
 "mid",
 "break"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "spain-digital-nomad-visa": {
 "i": [
@@ -2065,7 +2901,16 @@ const TAGS = {
 "break"
 ],
 "cit": "broad",
-"dir": 1
+"dir": 1,
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "americorps-vista": {
 "i": [
@@ -2080,7 +2925,16 @@ const TAGS = {
 "early",
 "break"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "americorps-nccc": {
 "i": [
@@ -2092,7 +2946,12 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early"
+],
+"age": 26
 },
 "americorps-state-and-national": {
 "i": [
@@ -2109,7 +2968,16 @@ const TAGS = {
 "break",
 "return"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "white-house-fellows": {
 "i": [
@@ -2123,7 +2991,13 @@ const TAGS = {
 "mid",
 "early"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"early",
+"mid",
+"gsdone",
+"break"
+]
 },
 "lead-for-america-american-connection-cor": {
 "i": [
@@ -2137,7 +3011,16 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "faspe-fellowships": {
 "i": [
@@ -2146,14 +3029,21 @@ const TAGS = {
 "grad"
 ],
 "paid": 1,
-"fmt": "sp",
-"reloc": 0,
+"fmt": "ft",
+"reloc": 1,
 "st": [
 "early",
 "gs",
-"new"
+"new",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"gs",
+"gsdone"
+]
 },
 "aaas-mass-media-science-engineering-fell": {
 "i": [
@@ -2165,9 +3055,14 @@ const TAGS = {
 "reloc": 1,
 "st": [
 "gs",
-"new"
+"new",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"gs"
+]
 },
 "knight-science-journalism-fellowship-mit": {
 "i": [
@@ -2182,7 +3077,13 @@ const TAGS = {
 "early",
 "break"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"early",
+"mid",
+"break",
+"return"
+]
 },
 "foodcorps": {
 "i": [
@@ -2196,7 +3097,16 @@ const TAGS = {
 "new",
 "early"
 ],
-"cit": "citlpr"
+"cit": "citlpr",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "australia-work-and-holiday-visa-462": {
 "i": [
@@ -2211,7 +3121,17 @@ const TAGS = {
 "early",
 "break"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+],
+"age": 30
 },
 "new-zealand-usa-working-holiday-visa": {
 "i": [
@@ -2226,7 +3146,17 @@ const TAGS = {
 "early",
 "break"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+],
+"age": 30
 },
 "ireland-working-holiday-authorisation": {
 "i": [
@@ -2239,7 +3169,12 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"gs",
+"gsdone"
+]
 },
 "korea-working-holiday-for-us-students": {
 "i": [
@@ -2252,7 +3187,12 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"gs",
+"gsdone"
+]
 },
 "global-korea-scholarship-graduate": {
 "i": [
@@ -2265,9 +3205,19 @@ const TAGS = {
 "st": [
 "new",
 "early",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "mext-research-student-scholarship-japan": {
 "i": [
@@ -2281,9 +3231,20 @@ const TAGS = {
 "st": [
 "new",
 "early",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+],
+"age": 34
 },
 "huayu-enrichment-scholarship-taiwan": {
 "i": [
@@ -2297,7 +3258,16 @@ const TAGS = {
 "early",
 "break"
 ],
-"cit": "citizen"
+"cit": "citizen",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "jpmorganchase-reentry-program": {
 "i": [
@@ -2310,7 +3280,10 @@ const TAGS = {
 "return",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"return"
+]
 },
 "techqueria": {
 "i": [
@@ -2327,7 +3300,16 @@ const TAGS = {
 "mid",
 "return"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "latinx-in-ai-lxai": {
 "i": [
@@ -2342,9 +3324,19 @@ const TAGS = {
 "new",
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new",
+"early",
+"mid",
+"gs",
+"gsdone",
+"break",
+"return"
+]
 },
 "mujeres-de-hace": {
 "i": [
@@ -2358,7 +3350,12 @@ const TAGS = {
 "early",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"early",
+"mid",
+"return"
+]
 },
 "chci-congressional-internship-program": {
 "i": [
@@ -2371,7 +3368,10 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new"
+]
 },
 "chli-global-leaders-internship": {
 "i": [
@@ -2384,7 +3384,10 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new"
+]
 },
 "forte-fellows-mba": {
 "i": [
@@ -2397,9 +3400,17 @@ const TAGS = {
 "st": [
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"early",
+"mid",
+"gs",
+"break",
+"return"
+]
 },
 "reaching-out-mba-fellowship": {
 "i": [
@@ -2412,9 +3423,15 @@ const TAGS = {
 "st": [
 "early",
 "mid",
-"gs"
+"gs",
+"gsdone"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"early",
+"mid",
+"gs"
+]
 },
 "ppia-junior-summer-institute": {
 "i": [
@@ -2427,7 +3444,10 @@ const TAGS = {
 "st": [
 "new"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"new"
+]
 },
 "amazon-returnships": {
 "i": [
@@ -2440,7 +3460,10 @@ const TAGS = {
 "return",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"return"
+]
 },
 "dell-career-restart": {
 "i": [
@@ -2453,7 +3476,10 @@ const TAGS = {
 "return",
 "mid"
 ],
-"cit": "broad"
+"cit": "broad",
+"el": [
+"return"
+]
 }
 };
 
@@ -2499,7 +3525,8 @@ const QUIZ = [
    ["new","I'm graduating or graduated in the last couple of years","Me estoy graduando o me gradué hace poco"],
    ["early","I've been working a few years (about 2 to 7)","Llevo unos años trabajando (de 2 a 7, más o menos)"],
    ["mid","I have 7+ years of experience and want to switch","Tengo más de 7 años de experiencia y quiero cambiar"],
-   ["gs","I'm in grad school or about to start","Estoy en un posgrado o por empezar"],
+   ["gs","I'm in grad school now","Estoy en un posgrado ahora"],
+   ["gsdone","I'm finishing or just finished grad school","Estoy terminando o acabo de terminar un posgrado"],
    ["break","I want a break or a sabbatical","Quiero una pausa o un sabático"],
    ["return","I'm coming back to work after a break","Estoy regresando a trabajar después de una pausa"]]},
  {k:"bg",multi:true,en:"What kind of work have you done or studied?",es:"¿Qué tipo de trabajo has hecho o estudiado?",hint:{en:"Pick all that apply. This is how we find skills you already have.",es:"Escoge todo lo que aplique. Así encontramos las destrezas que ya tienes."},opts:[
@@ -2525,6 +3552,8 @@ const QUIZ = [
    ["pay","I need to be paid enough to live on","Necesito que me paguen lo suficiente para vivir"],
    ["pt","I can only do something part-time","Solo puedo hacer algo a medio tiempo"],
    ["stay","I can't move right now","No me puedo mudar ahora"]]},
+ {k:"age",multi:false,en:"How old are you?",es:"¿Qué edad tienes?",hint:{en:"Some programs have age limits. This stays on your device.",es:"Algunos programas tienen límite de edad. Esto se queda en tu aparato."},opts:[
+   ["u25","Under 25","Menos de 25"],["a25","25 to 30","De 25 a 30"],["o30","31 or older","31 o más"],["skip","Prefer not to say","Prefiero no decir"]]},
  {k:"cit",multi:false,en:"Citizenship or residency",es:"Ciudadanía o residencia",hint:{en:"Many programs depend on this. It stays on your device. Pick 'Prefer not to say' and we'll flag programs to double-check instead.",es:"Muchos programas dependen de esto. Se queda en tu aparato. Si prefieres no decir, te marcamos los programas que debes revisar."},opts:[
    ["citizen","U.S. citizen","Ciudadano/a de EE.UU."],
    ["lpr","Green card (permanent resident)","Residente permanente (green card)"],
@@ -2532,30 +3561,30 @@ const QUIZ = [
    ["skip","Prefer not to say","Prefiero no decir"]]}
 ];
 const SKILLS = {
- teach:{en:["Running cohorts and trainings","AI literacy educator, field-building programs (like BlueDot facilitators)"],es:["Dirigir grupos y talleres","Educador/a sobre inteligencia artificial, programas de formación"]},
- policy:{en:["Reading and writing policy","AI policy analyst, tech staff in Congress, think tank research"],es:["Leer y escribir política pública","Analista de políticas de IA, personal de tecnología en el Congreso, centros de investigación"]},
- compliance:{en:["Assessing risk and checking evidence","AI governance, AI audit and risk assessment, responsible AI programs"],es:["Evaluar riesgos y revisar evidencia","Gobernanza de IA, auditoría de IA, programas de IA responsable"]},
- community:{en:["Knowing how systems affect real people","AI impact research, community engagement, trust and safety"],es:["Saber cómo los sistemas afectan a la gente","Investigación del impacto de la IA, trabajo comunitario, seguridad en plataformas"]},
- tech:{en:["Working with data and systems","AI evaluations, government tech roles, technical fellowships"],es:["Trabajar con datos y sistemas","Evaluaciones de IA, tecnología en el gobierno, becas técnicas"]},
- biz:{en:["Keeping organizations running","Operations, grants and program management at AI safety organizations"],es:["Mantener organizaciones funcionando","Operaciones, subvenciones y manejo de programas en organizaciones de seguridad de IA"]},
- comms:{en:["Explaining hard things simply","AI policy communications, explaining AI to the public"],es:["Explicar cosas difíciles de forma sencilla","Comunicaciones sobre políticas de IA, explicar la IA al público"]},
- science:{en:["Careful methods and working with evidence","Science policy fellowships, AI evaluations, biosecurity and health research"],es:["Métodos cuidadosos y trabajo con evidencia","Becas de política científica, evaluaciones de IA, investigación en salud y bioseguridad"]},
- other:{en:["What you've already done counts","Many AI and policy programs want people from every field. Your story is part of the application."],es:["Lo que ya has hecho cuenta","Muchos programas de IA y política pública buscan gente de todos los campos. Tu historia es parte de la solicitud."]},
- research:{en:["Finding and weighing evidence","AI policy and impact research, threat research"],es:["Buscar y evaluar evidencia","Investigación de políticas e impacto de la IA"]}
+ teach:{en:["Explaining things and running a room","Teaching abroad (Fulbright ETA, JET, EPIK, TAPIF), service years, education and training roles"],es:["Explicar cosas y manejar un grupo","Enseñar en el extranjero (Fulbright ETA, JET, EPIK, TAPIF), años de servicio, trabajos de educación y capacitación"]},
+ policy:{en:["Reading and writing policy","Public policy fellowships (CHCI, Coro, Urban Fellows), Congress and government programs, foreign affairs fellowships"],es:["Leer y escribir política pública","Becas de política pública (CHCI, Coro, Urban Fellows), programas en el Congreso y el gobierno, becas de asuntos exteriores"]},
+ compliance:{en:["Assessing risk and checking evidence","Government and tech fellowships, AI governance and audit programs, MBA and policy school funding"],es:["Evaluar riesgos y revisar evidencia","Becas en gobierno y tecnología, gobernanza y auditoría de IA, fondos para MBA y escuelas de política pública"]},
+ community:{en:["Knowing how systems affect real people","Service years (AmeriCorps, Peace Corps, FoodCorps), hunger and peace fellowships, social impact funding"],es:["Saber cómo los sistemas afectan a la gente","Años de servicio (AmeriCorps, Peace Corps, FoodCorps), becas sobre hambre y paz, fondos de impacto social"]},
+ tech:{en:["Working with data and systems","Tech training with pay (Pursuit, Per Scholas), tech fellowships in government, research programs"],es:["Trabajar con datos y sistemas","Capacitación en tecnología con pago (Pursuit, Per Scholas), becas de tecnología en el gobierno, programas de investigación"]},
+ biz:{en:["Keeping organizations running","MBA funding (Consortium, Forté, Toigo), leadership programs, returnships"],es:["Mantener organizaciones funcionando","Fondos para MBA (Consortium, Forté, Toigo), programas de liderazgo, programas para regresar al trabajo"]},
+ comms:{en:["Explaining hard things simply","Journalism fellowships (Tarbell, Knight, AAAS Mass Media), teaching abroad, communications roles in public service"],es:["Explicar cosas difíciles de forma sencilla","Becas de periodismo (Tarbell, Knight, AAAS Mass Media), enseñar en el extranjero, comunicaciones en servicio público"]},
+ science:{en:["Careful methods and working with evidence","Research funding (NSF GRFP, NIH, ORISE), science policy fellowships, study abroad scholarships"],es:["Métodos cuidadosos y trabajo con evidencia","Fondos de investigación (NSF GRFP, NIH, ORISE), becas de política científica, becas para estudiar afuera"]},
+ research:{en:["Finding and weighing evidence","Research fellowships, think tank programs, funded master's and PhDs abroad"],es:["Buscar y evaluar evidencia","Becas de investigación, programas en centros de estudio, maestrías y doctorados pagados en el extranjero"]},
+ other:{en:["What you've already done counts","Most programs here want people from every field. Your story is part of the application."],es:["Lo que ya has hecho cuenta","La mayoría de estos programas buscan gente de todos los campos. Tu historia es parte de la solicitud."]}
 };
-let answers = {stage:null,bg:[],int:[],need:[],cit:null};
+let answers = {stage:null,bg:[],int:[],need:[],age:null,cit:null};
 try{ const s=JSON.parse(localStorage.getItem("yaq_answers")||"null"); if(s) answers={...answers,...s}; }catch(e){}
 
 const T = {
- en:{nav_path:"Find my path",pa_title:"Not sure what to apply to? <em>Start here.</em>",pa_sub:"Answer five quick questions. You don't need to know anything about fellowships yet. Whether you just graduated, want to switch, need a break or are coming back, we'll show what fits your life right now, the skills you already have, and your next three steps.",
+ en:{nav_path:"Find my path",pa_title:"Not sure what to apply to? <em>Start here.</em>",pa_sub:"Answer six quick questions. You don't need to know anything about fellowships yet. Whether you just graduated, want to switch, need a break or are coming back, we'll show what fits your life right now, the skills you already have, and your next three steps.",
   lib_title:"Free, trusted <em>resources</em>",lib_sub:"Official tools and free help, most of them in Spanish too. Start here before paying anyone for advice. Paid options are marked.",
   r_title:"Your best fits right now",r_empty:"Answer the first question to see your matches.",r_none:"Nothing fits every answer yet. Try unchecking one of your needs.",
-  r_skills:"Skills you already bring",r_skills_sub:"What your background already gives you, and where it leads in AI and public-interest work:",
+  r_skills:"Skills you already bring",r_skills_sub:"What your background already gives you, and where it can take you:",
   r_steps:"Your next three steps",r_money:"Your money guide",r_reset:"Start over",r_plan:"Write my personal plan",r_planning:"Writing your plan…",
   w_int:"Fits what excites you",w_stage:"Right for your stage",w_paid:"Paid",w_pt:"Part-time",w_remote:"No move needed",w_open:"Open now",w_soon:"Deadline soon",w_cit:"Matches your status",
-  flag_cit:"Check eligibility: this one is for U.S. citizens only.",flag_lpr:"Check eligibility: citizens or permanent residents only.",
-  s_learn:"Learn the basics (about 2 hours)",s_apply:"Apply next",s_talk:"Talk to someone who's done it",s_talk_p:"Ask a past fellow in Community, or get free advice from 80,000 Hours' AI career advisor.",
-  s_mid:"Get transition support built for experienced people: Successif or Arcadia's part-time taskforce.",
+  flag_cit:"Check eligibility: this one is for U.S. citizens only.",flag_age:"This one has an age limit. Check it before you apply.",r_now:"Apply now",r_later:"Plan for the next round",r_later_sub:"These are closed or not open yet. Save them so you're ready when they open.",r_count:n=>`${n} programs fit your answers.`,r_all:"See all in Explore",r_match:n=>`Showing your ${n} quiz matches`,r_clear:"Show everything",s_learn_p:"Read the eligibility page for your top match,",s_ai:"Curious about AI? Try the free 2-hour course from",flag_lpr:"Check eligibility: citizens or permanent residents only.",
+  s_learn:"Do this first (15 minutes)",s_apply:"Apply next",s_talk:"Talk to someone who's done it",s_talk_p:"Ask a past fellow in Community, or email your college's fellowships or career office. Most still help alumni for free.",
+  s_mid:"Get support built for experienced people: High Impact Professionals or Successif, or a past fellow in Community.",
   tracked_btn:"Track",nav_explore:"Explore",nav_tracker:"My applications",nav_community:"Community",nav_money:"Money by stage",aig_t:"Using AI on applications",aig_b:"<ul><li><b>Usually OK:</b> brainstorming ideas, checking grammar, and practicing interview questions.</li><li><b>Usually not OK:</b> having AI write or rewrite your essays, or using AI during an interview.</li><li><b>Watch out:</b> AI can invent facts about you, and what you paste into it may not stay private.</li><li>When a program publishes its own AI rule, you'll see it when you open that listing. When in doubt, ask yourself: would it be OK to ask a mentor to do this for me?</li></ul>",prv_t:"Our privacy promise",prv_b:"Your quiz answers, including citizenship or residency, never leave your device. We don't ask for your status on any server, we don't sell your information, and we don't use tracking ads. You can clear everything with the reset button on the quiz.",co_soon:"Public profiles are coming soon. For now, these examples show what they will look like.",
   ex_title:"Everything you can apply to <em>that isn't a job.</em>",ex_sub:"Fellowships, paid programs, teaching and living abroad, school funding, sabbaticals and return-to-work programs, all in one place and picked for first-gens. Dates last checked Nov 19, 2026. Always confirm on the official site before you apply.",
   open_now:"Open now or rolling",filters:"Filters",stage_l:"Your stage",today:"Today",ndays:n=>`${n} ${n===1?"day":"days"}`,g_week:"Closing in the next 7 days",g_month:m=>`Due in ${m}`,g_opennd:"Open now, no fixed deadline",g_roll:"Apply any time",g_opening:"Opening soon",g_check:"Check the site for dates",g_closed:"Closed until the next round",c_any:"Any time",c_opens:m=>`Opens ~${m}`,c_next:m=>`Next ~${m}`,c_check:"Check site",c_open:"Open",c_closed:"Closed",q_paid:"Paid",q_us:"U.S. citizens only",none:"Nothing matches yet. Try clearing a filter.",noncit:"Hide U.S.-citizens-only",all_stages:"All stages",all:"All",
@@ -2581,15 +3610,15 @@ const T = {
   footer:"Built by Roots y Rutas. Everything but the job, in one place. Listings last checked Nov 19, 2026. Deadlines and pay change every cycle: confirm on the official site.",
   added:"Added to My applications",ai_off:"Answers aren't available in this view.",
   default_need:["Resume","Personal statement / essays","Recommendation letters","Transcripts","Interview prep"]},
- es:{nav_path:"Encuentra tu camino",pa_title:"¿No sabes qué solicitar? <em>Empieza aquí.</em>",pa_sub:"Contesta cinco preguntas rápidas. No tienes que saber nada de becas todavía. Ya sea que te acabas de graduar, quieres cambiar de carrera, necesitas una pausa o vas a regresar al trabajo, te mostramos lo que encaja con tu vida ahora, las destrezas que ya tienes y tus próximos tres pasos.",
+ es:{nav_path:"Encuentra tu camino",pa_title:"¿No sabes qué solicitar? <em>Empieza aquí.</em>",pa_sub:"Contesta seis preguntas rápidas. No tienes que saber nada de becas todavía. Ya sea que te acabas de graduar, quieres cambiar de carrera, necesitas una pausa o vas a regresar al trabajo, te mostramos lo que encaja con tu vida ahora, las destrezas que ya tienes y tus próximos tres pasos.",
   lib_title:"Recursos <em>gratis y confiables</em>",lib_sub:"Herramientas oficiales y ayuda gratis, casi todas también en español. Empieza aquí antes de pagarle a alguien por consejos. Las opciones de pago están marcadas.",
   r_title:"Lo que mejor te queda ahora",r_empty:"Contesta la primera pregunta para ver tus opciones.",r_none:"Nada encaja con todas tus respuestas todavía. Prueba quitando una de tus necesidades.",
-  r_skills:"Destrezas que ya tienes",r_skills_sub:"Lo que tu experiencia ya te da, y a dónde te puede llevar en inteligencia artificial y trabajo de interés público:",
+  r_skills:"Destrezas que ya tienes",r_skills_sub:"Lo que tu experiencia ya te da, y a dónde te puede llevar:",
   r_steps:"Tus próximos tres pasos",r_money:"Tu guía de dinero",r_reset:"Empezar de nuevo",r_plan:"Escribir mi plan personal",r_planning:"Escribiendo tu plan…",
   w_int:"Va con lo que te emociona",w_stage:"Para tu etapa",w_paid:"Pagado",w_pt:"Medio tiempo",w_remote:"Sin mudarte",w_open:"Abierta ahora",w_soon:"Cierra pronto",w_cit:"Va con tu estatus",
-  flag_cit:"Revisa: esta es solo para ciudadanos de EE.UU.",flag_lpr:"Revisa: solo para ciudadanos o residentes permanentes.",
-  s_learn:"Aprende lo básico (unas 2 horas)",s_apply:"Solicita después",s_talk:"Habla con alguien que ya lo hizo",s_talk_p:"Pregúntale a alguien en Comunidad, o recibe consejos gratis del asesor de carreras con IA de 80,000 Hours.",
-  s_mid:"Busca apoyo para profesionales con experiencia: Successif o el grupo de medio tiempo de Arcadia.",
+  flag_cit:"Revisa: esta es solo para ciudadanos de EE.UU.",flag_age:"Esta tiene límite de edad. Revísalo antes de solicitar.",r_now:"Solicita ahora",r_later:"Prepárate para la próxima ronda",r_later_sub:"Estas están cerradas o todavía no abren. Guárdalas para estar lista cuando abran.",r_count:n=>`${n} programas van con tus respuestas.`,r_all:"Ver todas en Explorar",r_match:n=>`Mostrando tus ${n} resultados del cuestionario`,r_clear:"Ver todo",s_learn_p:"Lee la página de requisitos de tu mejor opción,",s_ai:"¿Te interesa la IA? Prueba el curso gratis de 2 horas de",flag_lpr:"Revisa: solo para ciudadanos o residentes permanentes.",
+  s_learn:"Haz esto primero (15 minutos)",s_apply:"Solicita después",s_talk:"Habla con alguien que ya lo hizo",s_talk_p:"Pregúntale a alguien en Comunidad, o escríbele a la oficina de becas o de carreras de tu universidad. La mayoría ayuda gratis a sus exalumnos.",
+  s_mid:"Busca apoyo para profesionales con experiencia: High Impact Professionals o Successif, o alguien en Comunidad.",
   tracked_btn:"Seguir",nav_explore:"Explorar",nav_tracker:"Mis solicitudes",nav_community:"Comunidad",nav_money:"Dinero por etapa",aig_t:"Usar IA en tus solicitudes",aig_b:"<ul><li><b>Normalmente se puede:</b> generar ideas, revisar gramática y practicar preguntas de entrevista.</li><li><b>Normalmente no se puede:</b> que la IA escriba o reescriba tus ensayos, o usarla durante una entrevista.</li><li><b>Cuidado:</b> la IA puede inventar datos sobre ti, y lo que le pegas puede no quedarse privado.</li><li>Cuando un programa publica su propia regla sobre IA, la verás al abrir esa oportunidad. Si tienes dudas, pregúntate: ¿estaría bien pedirle esto a un mentor?</li></ul>",prv_t:"Tu privacidad",prv_b:"Tus respuestas del cuestionario, incluida tu ciudadanía o residencia, nunca salen de tu aparato. No pedimos tu estatus en ningún servidor, no vendemos tu información y no usamos anuncios que te rastrean. Puedes borrar todo con el botón de reiniciar en el cuestionario.",co_soon:"Los perfiles públicos vienen pronto. Por ahora, estos ejemplos muestran cómo se verán.",
   ex_title:"Todo lo que puedes solicitar <em>que no es un trabajo.</em>",ex_sub:"Becas, programas pagados, enseñar o vivir en el extranjero, fondos para estudiar, sabáticos y programas para regresar al trabajo, todo en un solo lugar y escogido para los primeros de la familia. Fechas revisadas el 19 de noviembre de 2026. Confirma siempre en la página oficial antes de solicitar.",
   open_now:"Abiertas o todo el año",filters:"Filtros",stage_l:"Tu etapa",today:"Hoy",ndays:n=>`${n} ${n===1?"día":"días"}`,g_week:"Cierran en los próximos 7 días",g_month:m=>`Cierran en ${m}`,g_opennd:"Abiertas ahora, sin fecha fija",g_roll:"Puedes solicitar cuando quieras",g_opening:"Abren pronto",g_check:"Revisa las fechas en la página",g_closed:"Cerradas hasta la próxima ronda",c_any:"Cuando quieras",c_opens:m=>`Abre ~${m}`,c_next:m=>`Próxima ~${m}`,c_check:"Revisar",c_open:"Abierta",c_closed:"Cerrada",q_paid:"Pagado",q_us:"Solo ciudadanos de EE.UU.",none:"No hay resultados. Prueba quitando un filtro.",noncit:"Ocultar las de solo ciudadanos",all_stages:"Todas las etapas",all:"Todas",
@@ -2716,7 +3745,7 @@ const EXAMPLES = [
 /* ---------- state ---------- */
 let lang = "en";
 try{ const s = localStorage.getItem("yaq_lang"); if(s==="es"||s==="en") lang=s; }catch(e){}
-let filters = {q:"",cat:"All",stage:"all",open:false,noncit:false};
+let filters = {q:"",cat:"All",stage:"all",open:false,noncit:false,match:null};
 let tracker = {};            // {oppId:{status,due,need:[{t,d}],notes}}
 let trackerMode = "local";   // "db" | "local"
 let db=null, user=null, uid=null, sample=null;
@@ -2733,7 +3762,7 @@ const fmtDate = iso => iso ? new Date(iso+"T00:00:00").toLocaleDateString(lang==
 function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.style.display="block";clearTimeout(toast._t);toast._t=setTimeout(()=>t.style.display="none",2200)}
 
 function dlBox(o){ const d=daysTo(o.dl); const date=o.dl?`<strong>${fmtDate(o.dl)}</strong>${o.est?`<span class="dl-est">${esc(tt("est"))}</span>`:""} · ${esc(tt("days")(d))}<br>`:""; return `<div class="deadline"><span class="dl-label">${esc(tt("f_dl"))}</span>${date}${esc(o.note)}</div>`; }
-function statusClass(s){ if(/closing soon/i.test(s))return"soon"; if(/^open/i.test(s))return"open"; if(/^rolling/i.test(s))return"roll"; if(/^paused/i.test(s))return"paused"; return"closed"; }
+function statusClass(s){ if(/closing soon/i.test(s))return"soon"; if(/^open\b/i.test(s))return"open"; if(/^rolling/i.test(s))return"roll"; if(/^paused/i.test(s))return"paused"; return"closed"; }
 function statusLabel(s){ if(lang==="en") return s;
   return s.replace("Open, closing soon","Abierta, cierra pronto").replace(/^Open$/,"Abierta").replace("Rolling cohorts","Grupos todo el año").replace(/^Rolling$/,"Todo el año")
    .replace("Paused, watch","En pausa").replace("Check site","Revisar la página").replace("Closed, watch","Cerrada, atenta").replace(/Closed, next ~/,"Cerrada, próxima ~").replace("Opens ~","Abre ~"); }
@@ -2767,63 +3796,37 @@ function buildSelects(){
 }
 
 /* ---------- explore ---------- */
-function renderExplore(){
-  const q = filters.q.trim().toLowerCase();
-  const list = OPPS.filter(o=>{
-    if(filters.cat!=="All" && o.cat!==filters.cat) return false;
-    if(filters.stage!=="all" && o.stage!==filters.stage) return false;
-    if(filters.open && !/^(open|rolling)/i.test(o.status)) return false;
-    if(filters.noncit && /citizens only|citizens or nationals only/i.test(o.cit)) return false;
-    if(q && !(o.name+" "+o.what+" "+o.where+" "+o.who+" "+o.cat).toLowerCase().includes(q)) return false;
-    return true;
-  });
-  const nf = (filters.stage!=="all")+(filters.open?1:0)+(filters.noncit?1:0);
-  const fn=document.getElementById("filt-n"); if(fn){ fn.textContent=nf; fn.hidden=!nf; }
-  document.getElementById("rc").textContent = tt("results")(list.length);
-  const ORDER=["week","month","opennd","roll","opening","check","closed"];
-  const groupOf=o=>{ const d=daysTo(o.dl);
-    if(o.dl && d!=null && d>=0) return d<=7?["week",d]:["month",o.dl.slice(0,7)];
-    if(o.dl) return ["closed"];
-    const c=statusClass(o.status);
-    if(c==="roll") return ["roll"];
-    if(/^opens/i.test(o.status)) return ["opening"];
-    if(/^check/i.test(o.status)) return ["check"];
-    if(c==="open"||c==="soon") return ["opennd"];
-    return ["closed"]; };
-  const rows=list.map(o=>({o,g:groupOf(o)}));
-  rows.sort((a,b)=>{ const ia=ORDER.indexOf(a.g[0]), ib=ORDER.indexOf(b.g[0]); if(ia!==ib) return ia-ib;
-    if(a.o.dl&&b.o.dl) return a.o.dl.localeCompare(b.o.dl); return a.o.name.localeCompare(b.o.name); });
-  const gLabel=g=>{ if(g[0]==="month"){ const m=new Date(g[1]+"-01T00:00:00").toLocaleDateString(lang==="es"?"es-US":"en-US",{month:"long",year:"numeric"}); return tt("g_month")(m); } return tt("g_"+g[0]); };
-  const short=(s,n)=>{ s=String(s||"").split(/[(;]/)[0].trim(); if(/^(n\/a|varies)/i.test(s)) return ""; return s.length>n?s.slice(0,n-1).trim()+"…":s; };
-  const chip=o=>{ const d=daysTo(o.dl);
-    if(o.dl && d!=null && d>=0){ if(d===0) return ["urgent",tt("today")]; if(d<=7) return ["urgent",tt("ndays")(d)]; if(d<=30) return ["soon",tt("ndays")(d)];
-      return ["date",new Date(o.dl+"T00:00:00").toLocaleDateString(lang==="es"?"es-US":"en-US",{month:"short",day:"numeric"})]; }
-    const s=o.status; let m;
-    if(statusClass(s)==="roll") return ["any",tt("c_any")];
-    if((m=s.match(/^Opens ~(.+)/i))) return ["date",tt("c_opens")(m[1])];
-    if((m=s.match(/next ~(.+)/i))) return ["closed",tt("c_next")(m[1])];
-    if(/^check/i.test(s)) return ["closed",tt("c_check")];
-    if(/^open/i.test(s)) return ["any",tt("c_open")];
-    return ["closed",tt("c_closed")]; };
-  let html="", last=null;
-  rows.forEach(({o,g})=>{
-    const key=g[0]==="month"?g[0]+g[1]:g[0];
-    if(key!==last){ html+=`<div class="ghead ${g[0]==="week"?"urgent":""}">${esc(gLabel(g))}</div>`; last=key; }
-    const tg=(typeof TAGS!=="undefined"&&TAGS[o.id])||{};
-    const facts=[]; if(tg.paid) facts.push(`<b>${tt("q_paid")}</b>`);
-    if(/citizens only|citizens or nationals only/i.test(o.cit)||tg.cit==="citizen") facts.push(tt("q_us"));
-    const ln=short(o.length,22); if(ln) facts.push(esc(ln));
-    const wh=short(o.where,24); if(wh) facts.push(esc(wh));
-    const [cc,ct]=chip(o);
-    const tracked=!!tracker[o.id];
-    const d=daysTo(o.dl);
-    const dl = typeof dlBox==="function" ? dlBox(o) : (o.dl ? `<div class="deadline"><strong>${fmtDate(o.dl)}</strong> · ${esc(tt("days")(d))}${o.note?"<br>"+esc(o.note):""}</div>` : (o.note?`<div class="deadline">${esc(o.note)}</div>`:""));
-    const ai = AIRULES[o.id] ? aiLine(o) : "";
-    html+=`<details class="row" data-row="${o.id}" ${openRows.has(o.id)?"open":""}>
+function shortTxt(s,n){ s=String(s||"").split(/[(;]/)[0].trim(); if(/^(n\/a|varies)/i.test(s)) return ""; return s.length>n?s.slice(0,n-1).trim()+"…":s; }
+function dChip(o){ const d=daysTo(o.dl);
+  if(o.dl && d!=null && d>=0){ if(d===0) return ["urgent",tt("today")]; if(d<=7) return ["urgent",tt("ndays")(d)]; if(d<=30) return ["soon",tt("ndays")(d)];
+    return ["date",new Date(o.dl+"T00:00:00").toLocaleDateString(lang==="es"?"es-US":"en-US",{month:"short",day:"numeric"})]; }
+  if(o.dl) return ["closed",tt("c_closed")];
+  const s=o.status; let m;
+  if(statusClass(s)==="roll") return ["any",tt("c_any")];
+  if((m=s.match(/^Opens ~(.+)/i))) return ["date",tt("c_opens")(m[1])];
+  if((m=s.match(/next ~(.+)/i))) return ["closed",tt("c_next")(m[1])];
+  if(/^check/i.test(s)) return ["closed",tt("c_check")];
+  if(/^open\b/i.test(s)) return ["any",tt("c_open")];
+  return ["closed",tt("c_closed")]; }
+function rowHTML(o,ex){ ex=ex||{};
+  const tg=(typeof TAGS!=="undefined"&&TAGS[o.id])||{};
+  const facts=[]; if(tg.paid) facts.push(`<b>${tt("q_paid")}</b>`);
+  if(/citizens only|citizens or nationals only/i.test(o.cit)||tg.cit==="citizen") facts.push(tt("q_us"));
+  const ln=shortTxt(o.length,22); if(ln) facts.push(esc(ln));
+  const wh=shortTxt(o.where,24); if(wh) facts.push(esc(wh));
+  const [cc,ct]=dChip(o);
+  const tracked=!!tracker[o.id];
+  const d=daysTo(o.dl);
+  const dl = typeof dlBox==="function" ? dlBox(o) : (o.dl ? `<div class="deadline"><strong>${fmtDate(o.dl)}</strong> · ${esc(tt("days")(d))}${o.note?"<br>"+esc(o.note):""}</div>` : (o.note?`<div class="deadline">${esc(o.note)}</div>`:""));
+  const ai = AIRULES[o.id] ? aiLine(o) : "";
+  const why = ex.why&&ex.why.length ? `<div class="why">${ex.why.map(w=>`<span>${esc(tt(w))}</span>`).join("")}</div>` : "";
+  const flag = ex.flag ? `<p class="flag">${esc(tt(ex.flag))}</p>` : "";
+  return `<details class="row" data-row="${o.id}" ${openRows.has(o.id)?"open":""}>
       <summary><div class="r1"><span class="rname">${esc(o.name)}</span><span class="dchip ${cc}">${esc(ct)}</span></div>
         <div class="rwhat">${esc(o.what)}</div>
-        <div class="rfacts">${facts.join(" · ")}</div></summary>
+        <div class="rfacts">${facts.join(" · ")}</div>${flag}</summary>
       <div class="rbody">
+        ${why}
         <div class="rmeta">${esc(CATS[o.cat][lang])} · ${esc(STAGES[o.stage]?.[lang]||o.stage)} · <span class="pill ${statusClass(o.status)}">${esc(statusLabel(o.status))}</span></div>
         <dl class="facts">
           <dt>${tt("f_who")}</dt><dd>${esc(o.who)}</dd>
@@ -2842,6 +3845,40 @@ function renderExplore(){
         ${GUIDES[o.guide]?`<a class="glink" href="#money" data-guide="${o.guide}">${tt("money")}: ${esc(GUIDES[o.guide][lang].t)}</a>`:""}
       </div>
     </details>`;
+}
+function renderExplore(){
+  const q = filters.q.trim().toLowerCase();
+  const list = OPPS.filter(o=>{
+    if(filters.match && !filters.match.has(o.id)) return false;
+    if(filters.cat!=="All" && o.cat!==filters.cat) return false;
+    if(filters.stage!=="all" && o.stage!==filters.stage) return false;
+    if(filters.open && !/^(open\b|rolling)/i.test(o.status)) return false;
+    if(filters.noncit && /citizens only|citizens or nationals only/i.test(o.cit)) return false;
+    if(q && !(o.name+" "+o.what+" "+o.where+" "+o.who+" "+o.cat).toLowerCase().includes(q)) return false;
+    return true;
+  });
+  const nf = (filters.stage!=="all")+(filters.open?1:0)+(filters.noncit?1:0);
+  const fn=document.getElementById("filt-n"); if(fn){ fn.textContent=nf; fn.hidden=!nf; }
+  document.getElementById("rc").innerHTML = filters.match ? `${esc(tt("r_match")(list.length))} · <button type="button" class="linkbtn" id="clear-match">${tt("r_clear")}</button>` : esc(tt("results")(list.length));
+  const ORDER=["week","month","opennd","roll","opening","check","closed"];
+  const groupOf=o=>{ const d=daysTo(o.dl);
+    if(o.dl && d!=null && d>=0) return d<=7?["week",d]:["month",o.dl.slice(0,7)];
+    if(o.dl) return ["closed"];
+    const c=statusClass(o.status);
+    if(c==="roll") return ["roll"];
+    if(/^opens/i.test(o.status)) return ["opening"];
+    if(/^check/i.test(o.status)) return ["check"];
+    if(c==="open"||c==="soon") return ["opennd"];
+    return ["closed"]; };
+  const rows=list.map(o=>({o,g:groupOf(o)}));
+  rows.sort((a,b)=>{ const ia=ORDER.indexOf(a.g[0]), ib=ORDER.indexOf(b.g[0]); if(ia!==ib) return ia-ib;
+    if(a.o.dl&&b.o.dl) return a.o.dl.localeCompare(b.o.dl); return a.o.name.localeCompare(b.o.name); });
+  const gLabel=g=>{ if(g[0]==="month"){ const m=new Date(g[1]+"-01T00:00:00").toLocaleDateString(lang==="es"?"es-US":"en-US",{month:"long",year:"numeric"}); return tt("g_month")(m); } return tt("g_"+g[0]); };
+  let html="", last=null;
+  rows.forEach(({o,g})=>{
+    const key=g[0]==="month"?g[0]+g[1]:g[0];
+    if(key!==last){ html+=`<div class="ghead ${g[0]==="week"?"urgent":""}">${esc(gLabel(g))}</div>`; last=key; }
+    html+=rowHTML(o);
   });
   document.getElementById("cards").innerHTML = html || `<p class="rmeta">${tt("none")}</p>`;
 }
@@ -2873,7 +3910,7 @@ function renderTracker(){
   document.getElementById("tiles").innerHTML = [[ids.length,"t_tracking"],[due30,"t_due30"],[sub,"t_sub"],[won,"t_won"]].map(([n,k])=>`<div class="tile"><b>${n}</b><span>${tt(k)}</span></div>`).join("");
   const box = document.getElementById("tracks");
   if(!ids.length){
-    const picks = OPPS.filter(o=>/^open/i.test(o.status)&&o.dl).sort((a,b)=>a.dl.localeCompare(b.dl)).slice(0,3);
+    const picks = OPPS.filter(o=>/^open\b/i.test(o.status)&&o.dl).sort((a,b)=>a.dl.localeCompare(b.dl)).slice(0,3);
     box.innerHTML = `<div class="empty"><h3>${tt("empty_t")}</h3><p>${tt("empty_p")}</p><div class="actions">${picks.map(o=>`<button type="button" class="btn small" data-track="${o.id}">+ ${esc(o.name)}</button>`).join("")}</div></div>`;
     return;
   }
@@ -2983,11 +4020,19 @@ function renderQuiz(){
     <div class="opts">${q.opts.map(([v,en,es])=>{const on=q.multi?(answers[q.k]||[]).includes(v):answers[q.k]===v;return `<button type="button" class="opt" data-q="${q.k}" data-v="${v}" aria-pressed="${on}">${esc(lang==="es"?es:en)}</button>`}).join("")}</div>
   </div>`).join("");
 }
+function eligible(o,g,a){
+  const el=g.el||["new","early","mid","gs","gsdone","break","return"];
+  if(a.stage && !el.includes(a.stage)) return false;
+  const minAge={u25:18,a25:25,o30:31}[a.age];
+  if(g.age && minAge && g.age<minAge) return false;
+  return true;
+}
 function scoreOpps(){
   const a=answers, out=[];
+  const ints=a.int||[];
   OPPS.forEach(o=>{
     const g=TAGS[o.id]; if(!g||g.dir) return;
-    if(a.stage && !g.st.includes(a.stage)) return;
+    if(!eligible(o,g,a)) return;
     if(a.need.includes("pt") && g.fmt==="ft") return;
     if(a.need.includes("stay") && g.reloc) return;
     if(a.need.includes("pay") && g.fmt==="ft" && !g.paid) return;
@@ -2995,50 +4040,53 @@ function scoreOpps(){
     if(g.cit==="citizen" && a.cit && a.cit!=="citizen"){ if(a.cit==="skip") flag="flag_cit"; else return; }
     if(g.cit==="citlpr" && (a.cit==="other")) return;
     if(g.cit==="citlpr" && a.cit==="skip") flag="flag_lpr";
+    if(g.age && (!a.age || a.age==="skip")) flag=flag||"flag_age";
     if(/^paused/i.test(o.status)) return;
+    const stageCat = (a.stage==="return" && o.cat==="Return to work") || (a.stage==="break" && (o.cat==="Sabbaticals & career breaks"||o.cat==="Live abroad & slow down"));
+    const hits=ints.filter(x=>g.i.includes(x)).length;
     let s=0; const why=[];
-    const hits=(a.int||[]).filter(x=>g.i.includes(x)).length; if(hits){s+=3*hits; why.push("w_int");}
-    if(a.stage){ s+=2; why.push("w_stage"); }
+    if(hits){ s+=4*hits; why.push("w_int"); }
+    if(stageCat){ s+=5; why.push("w_stage"); }
+    else if(a.stage && (g.st||[]).includes(a.stage)){ s+=2; why.push("w_stage"); }
     if(g.paid && g.fmt==="ft"){ if(a.need.includes("pay")) s+=1; why.push("w_paid"); }
     if(g.fmt!=="ft") why.push("w_pt");
     if(!g.reloc) why.push("w_remote");
-    if(/^(open|rolling)/i.test(o.status)){ s+=2; why.push("w_open"); }
+    if(/^(open\b|rolling)/i.test(o.status)){ s+=2; why.push("w_open"); }
     const d=daysTo(o.dl); if(d!=null&&d>=0&&d<=60){ s+=1; why.push("w_soon"); }
-    if((a.bg||[]).length && g.i.includes("ai") && (a.int||[]).includes("ai")) s+=1;
-    if(a.stage==="mid" && g.i.includes("support")) s+=2;
-    if(a.stage==="break" && (o.cat==="Sabbaticals & career breaks"||o.cat==="Live abroad & slow down")) s+=3;
-    if(a.stage==="return" && o.cat==="Return to work") s+=3;
+    if(a.stage==="mid" && g.i.includes("support")) s+=1;
     if(a.cit && a.cit!=="skip") why.push("w_cit");
-    out.push({o,s,why,flag});
+    out.push({o,s,why,flag,hit:hits>0||stageCat});
   });
-  return out.sort((x,y)=>y.s-x.s);
+  out.sort((x,y)=>y.s-x.s);
+  if(!ints.length) return out;
+  const strong=out.filter(x=>x.hit);
+  return strong.length>=4 ? strong : strong.concat(out.filter(x=>!x.hit));
 }
+function isNow(o){ const d=daysTo(o.dl); if(o.dl) return d!=null&&d>=0; return /^(open\b|rolling)/i.test(o.status); }
 function renderResults(){
   const box=document.getElementById("results");
   if(!answers.stage){ box.innerHTML=`<p class="note">${tt("r_empty")}</p>`; return; }
-  const list = scoreOpps().slice(0,6);
+  const all = scoreOpps();
+  const now = all.filter(x=>isNow(x.o)).slice(0,8);
+  const later = all.filter(x=>!isNow(x.o)).slice(0,8);
   const bg = answers.bg||[];
+  const top = now[0]||all[0];
+  const nextApply = now.find(x=>x.o.dl) || now[0];
+  const wantsAI = (answers.int||[]).includes("ai");
   const learn = byId("bluedot-impact-courses-agi-strategy-fron");
-  const nextApply = list.find(x=>/^open/i.test(x.o.status)&&x.o.dl&&daysTo(x.o.dl)>=0) || list.find(x=>/^(open|rolling)/i.test(x.o.status));
-  const wantsAI = (answers.int||[]).includes("ai") || answers.stage==="mid";
-  const learnItem = wantsAI ? `<b>${tt("s_learn")}:</b> BlueDot Impact, “The Future of AI” <a href="${esc(learn.link)}" target="_blank" rel="noopener">bluedot.org</a>`
-     : `<b>${tt("s_learn")}:</b> ${lang==="es"?"Prueba una simulación de trabajo gratis en":"Try a free job simulation on"} <a href="https://www.theforage.com" target="_blank" rel="noopener">Forage</a>`;
-  const gKey = answers.stage==="gs"?"grad":(answers.stage==="new"?"justgrad":"firstjob");
+  const learnItem = top ? `<b>${tt("s_learn")}:</b> ${tt("s_learn_p")} <a href="${esc(top.o.link)}" target="_blank" rel="noopener">${esc(top.o.name)}</a>${wantsAI&&learn?`. ${tt("s_ai")} <a href="${esc(learn.link)}" target="_blank" rel="noopener">BlueDot Impact</a>`:""}` : "";
+  const gKey = (answers.stage==="gs"||answers.stage==="gsdone")?"grad":(answers.stage==="new"?"justgrad":"firstjob");
+  const card = x=>rowHTML(x.o,x);
   box.innerHTML = `
     <h2>${tt("r_title")}</h2>
-    ${list.length?`<div class="grid">${list.map(({o,why,flag})=>{const tracked=!!tracker[o.id];const d=daysTo(o.dl);return `<article class="card">
-      <div class="meta"><span class="tag">${esc(CATS[o.cat][lang])}</span><span class="pill ${statusClass(o.status)}">${esc(statusLabel(o.status))}</span></div>
-      <h3>${esc(o.name)}</h3><p class="what">${esc(o.what)}</p>
-      <div class="why">${why.map(w=>`<span>${esc(tt(w))}</span>`).join("")}</div>
-      ${flag?`<p class="flag">${esc(tt(flag))}</p>`:""}
-      <dl class="facts"><dt>${tt("f_pay")}</dt><dd>${esc(o.pay)}</dd><dt>${tt("f_where")}</dt><dd>${esc(o.where)}</dd></dl>${aiLine(o)}
-      ${dlBox(o)}
-      <div class="actions"><button type="button" class="btn small ${tracked?"ghost":""}" data-track="${o.id}" ${tracked?"disabled":""}>${tracked?tt("tracking"):tt("track")}</button>
-      <a class="btn small ghost" href="${esc(o.link)}" target="_blank" rel="noopener">${tt("site")}</a></div></article>`}).join("")}</div>`:`<p class="note">${tt("r_none")}</p>`}
+    ${all.length?`<p class="note">${tt("r_count")(all.length)} <button type="button" class="btn small ghost" id="see-all">${tt("r_all")}</button></p>`:""}
+    ${now.length?`<h3 class="rgroup">${tt("r_now")}</h3><div class="list">${now.map(card).join("")}</div>`:""}
+    ${later.length?`<h3 class="rgroup">${tt("r_later")}</h3><p class="note">${tt("r_later_sub")}</p><div class="list">${later.map(card).join("")}</div>`:""}
+    ${!all.length?`<p class="note">${tt("r_none")}</p>`:""}
     <div class="two">
       ${bg.length?`<div class="panel"><h3>${tt("r_skills")}</h3><p>${tt("r_skills_sub")}</p><ul>${bg.map(k=>`<li><b>${esc(SKILLS[k][lang][0])}</b> → ${esc(SKILLS[k][lang][1])}</li>`).join("")}</ul></div>`:""}
       <div class="panel"><h3>${tt("r_steps")}</h3><ol>
-        <li>${learnItem}</li>
+        ${learnItem?`<li>${learnItem}</li>`:""}
         ${nextApply?`<li><b>${tt("s_apply")}:</b> ${esc(nextApply.o.name)}${nextApply.o.dl?` (${fmtDate(nextApply.o.dl)})`:""}</li>`:""}
         <li><b>${tt("s_talk")}:</b> ${answers.stage==="mid"?tt("s_mid"):tt("s_talk_p")}</li>
       </ol>
@@ -3048,12 +4096,16 @@ function renderResults(){
       <div class="ai" id="plan-out" hidden></div></div>
     </div>`;
 }
+document.addEventListener("click",e=>{
+  if(e.target.closest("#see-all")){ filters.match=new Set(scoreOpps().map(x=>x.o.id)); location.hash="#explore"; renderExplore(); window.scrollTo(0,0); return; }
+  if(e.target.closest("#clear-match")){ filters.match=null; renderExplore(); }
+});
 async function writePlan(){
   const out=document.getElementById("plan-out"), btn=document.getElementById("plan-go"); if(!sample||!out) return;
   btn.disabled=true; btn.textContent=tt("r_planning"); out.hidden=false; out.textContent="…";
   const lab=(k,v)=>{const q=QUIZ.find(x=>x.k===k);const o=q.opts.find(x=>x[0]===v);return o?o[1]:v;};
   const matches=scoreOpps().slice(0,6).map(x=>`${x.o.name} (${x.o.status}${x.o.dl?", deadline "+x.o.dl:""})`).join("; ");
-  const prompt=`You are a warm, practical career guide for first-generation graduates and career changers who are new to fellowships and to AI. Write for Roots y Rutas.
+  const prompt=`You are a warm, practical career guide for first-generation graduates and career changers who are new to fellowships, programs abroad and other opportunities that aren't jobs. Write for Roots y Rutas.
 Their answers:
 - Stage: ${lab("stage",answers.stage)}
 - Background: ${(answers.bg||[]).map(v=>lab("bg",v)).join(", ")||"not given"}
@@ -3120,7 +4172,7 @@ document.addEventListener("click",e=>{
   const qb=e.target.closest("[data-q]"); if(qb){ const q=QUIZ.find(x=>x.k===qb.dataset.q), v=qb.dataset.v;
     if(q.multi){ const arr=answers[q.k]||[]; answers[q.k]=arr.includes(v)?arr.filter(x=>x!==v):[...arr,v]; } else answers[q.k]=answers[q.k]===v?null:v;
     saveAnswers(); renderQuiz(); renderResults(); return; }
-  if(e.target.closest("#quiz-reset")){ answers={stage:null,bg:[],int:[],need:[],cit:null}; saveAnswers(); renderQuiz(); renderResults(); window.scrollTo(0,0); return; }
+  if(e.target.closest("#quiz-reset")){ answers={stage:null,bg:[],int:[],need:[],age:null,cit:null}; saveAnswers(); renderQuiz(); renderResults(); window.scrollTo(0,0); return; }
   if(e.target.closest("#plan-go")){ writePlan(); return; }
   const lc=e.target.closest("[data-libcat]"); if(lc){ libCat=lc.dataset.libcat; renderMoney(); return; }
   const c=e.target.closest("[data-cat]"); if(c){filters.cat=c.dataset.cat;buildSelects();renderExplore();return;}

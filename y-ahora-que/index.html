@@ -219,6 +219,34 @@ details.row>summary::-webkit-details-marker{display:none}
 .linkbtn{background:none;border:0;padding:0;color:var(--teal);text-decoration:underline;font:inherit;cursor:pointer}
 details.row .flag{margin:6px 0 0;font-size:12.5px}
 .rbody .why{margin:0}
+
+/* Newsletter + work-with-us (added Nov 24, 2026) */
+.news-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:12px 16px;margin:0 0 14px;max-width:820px}
+.news-strip p{margin:0;color:var(--muted)}
+.news-strip b{color:var(--teal-deep);font-weight:600}
+.after-main{max-width:1120px;margin:0 auto;padding:8px 20px 28px;display:grid;gap:22px}
+.news-band{background:var(--teal);color:#fff;border-radius:16px;padding:24px 26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.news-band h2{margin:0 0 4px;font-family:var(--display);font-weight:400;font-size:26px}
+.news-band h2 em{color:var(--gold);font-style:italic}
+.news-band p{margin:0;max-width:60ch;opacity:.92}
+.work h2{margin:0 0 4px;font-family:var(--display);font-weight:400;font-size:26px;color:var(--teal)}
+.work h2 em{color:var(--gold);font-style:italic}
+.work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:12px}
+.work details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.work summary{cursor:pointer;list-style:none}
+.work summary::-webkit-details-marker{display:none}
+.work summary h3{margin:0 0 4px;font-size:17px;font-weight:600;color:var(--teal-deep)}
+.work summary p{margin:0;color:var(--muted)}
+.work summary .open-cta{display:inline-block;margin-top:10px;font-weight:600;color:var(--teal)}
+.work details[open] .open-cta{display:none}
+.wform{display:grid;gap:10px;margin-top:14px}
+.wform label{display:grid;gap:4px;font-size:13px;color:var(--ink)}
+.wform input[type=text],.wform input[type=email],.wform input[type=url],.wform textarea{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.wform textarea{min-height:70px;resize:vertical}
+.wform .check{display:flex;gap:8px;align-items:flex-start;font-size:13px}
+.wform .req{color:var(--stop)}
+.wform .fine{font-size:12px;color:var(--muted);margin:0}
+.hp{position:absolute;left:-9999px}
 </style>
 </head>
 <body>
@@ -255,6 +283,10 @@ details.row .flag{margin:6px 0 0;font-size:12.5px}
     <div class="intro">
       <h2 data-t="ex_title">Everything you can apply to <em>that isn't a job.</em></h2>
       <p data-t="ex_sub">Fellowships, paid programs, teaching and living abroad, school funding, sabbaticals and return-to-work programs, all in one place and picked for first-gens. Dates last checked Nov 19, 2026. Always confirm on the official site before you apply.</p>
+    </div>
+    <div class="news-strip">
+      <p data-t="nl_strip"><b>Get 10 new opportunities every Tuesday.</b> Free, in your inbox. No spam, and we never sell your info.</p>
+      <a class="btn gold small" data-news target="_blank" rel="noopener" data-t="nl_btn">Subscribe free</a>
     </div>
     <div class="minis">
     <details class="aiguide"><summary data-t="aig_t">Using AI on applications</summary><div data-t="aig_b"></div></details>
@@ -334,6 +366,55 @@ details.row .flag{margin:6px 0 0;font-size:12.5px}
     <p class="disclaimer" data-t="disclaimer">This is general education, not tax, legal or financial advice. Rules change and every situation is different. For your own taxes, free help is available through IRS VITA sites.</p>
   </section>
 </main>
+<div class="after-main">
+  <section class="news-band" aria-labelledby="nb-t">
+    <div>
+      <h2 id="nb-t" data-t="nb_title">Never miss a <em>deadline.</em></h2>
+      <p data-t="nb_sub">Every Tuesday: 10 opportunities beyond the job board, picked for first-gens, with deadlines and links. Forward it to someone who needs it.</p>
+    </div>
+    <a class="btn gold" data-news target="_blank" rel="noopener" data-t="nl_btn">Subscribe free</a>
+  </section>
+  <section class="work" aria-labelledby="wk-t">
+    <h2 id="wk-t" data-t="wk_title">Work <em>with us</em></h2>
+    <div class="work-grid">
+    <details>
+      <summary><h3 data-t="wp_title">List your program</h3><p data-t="wp_sub">Run a fellowship, scholarship or program that's a good fit for first-gens? Tell us about it. Listing is free, and we review every submission before it goes live.</p><span class="open-cta" data-t="w_open">Fill out the form →</span></summary>
+      <form class="wform" name="list-program" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="list-program">
+        <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+        <label><span><span data-t="wp_program">Program name</span> <span class="req">*</span></span><input type="text" name="program" required></label>
+        <label><span><span data-t="wp_org">Organization</span> <span class="req">*</span></span><input type="text" name="organization" required></label>
+        <label><span><span data-t="wp_link">Link to the program</span> <span class="req">*</span></span><input type="url" name="link" required></label>
+        <label><span><span data-t="wp_deadline">Next deadline (if any)</span></span><input type="text" name="deadline"></label>
+        <label><span><span data-t="wp_who">Who is it for?</span></span><textarea name="who"></textarea></label>
+        <label><span><span data-t="w_name">Your name</span> <span class="req">*</span></span><input type="text" name="name" required></label>
+        <label><span><span data-t="w_email">Your email</span> <span class="req">*</span></span><input type="email" name="email" required></label>
+        <label class="check"><input type="checkbox" name="featured_interest" value="yes"> <span data-t="wp_feat">Tell me about featured spots when they open</span></label>
+        <p class="fine" data-t="w_privacy">We only use this to review your submission and contact you about it. We never sell or share it, and you can ask us to delete it anytime by replying to any email from us.</p>
+        <div><button class="btn" type="submit" data-t="w_send">Send</button></div>
+      </form>
+    </details>
+    <details>
+      <summary><h3 data-t="wb_title">Feature your business</h3><p data-t="wb_sub">Are you a first-gen business owner or professional? We're building a directory of first-gen-owned businesses, and each week we spotlight one in the newsletter. Founding spots are free.</p><span class="open-cta" data-t="w_open">Fill out the form →</span></summary>
+      <form class="wform" name="feature-business" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="feature-business">
+        <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+        <label><span><span data-t="wb_business">Business or practice name</span> <span class="req">*</span></span><input type="text" name="business" required></label>
+        <label><span><span data-t="wb_offer">What you offer</span> <span class="req">*</span></span><textarea name="offer" required></textarea></label>
+        <label><span><span data-t="wb_link">Website or Instagram</span> <span class="req">*</span></span><input type="text" name="link" required></label>
+        <label><span><span data-t="wb_where">City, or online</span></span><input type="text" name="where"></label>
+        <label><span><span data-t="wb_story">Your first-gen story in one line (optional)</span></span><input type="text" name="story"></label>
+        <label><span><span data-t="w_name">Your name</span> <span class="req">*</span></span><input type="text" name="name" required></label>
+        <label><span><span data-t="w_email">Your email</span> <span class="req">*</span></span><input type="email" name="email" required></label>
+        <label class="check"><input type="checkbox" name="first_gen" value="yes" required> <span data-t="wb_fg">This business is owned by a first-gen</span></label>
+        <label class="check"><input type="checkbox" name="consent" value="yes" required> <span data-t="wb_ok">You can feature my business in the newsletter and on this site</span></label>
+        <p class="fine" data-t="w_privacy">We only use this to review your submission and contact you about it. We never sell or share it, and you can ask us to delete it anytime by replying to any email from us.</p>
+        <div><button class="btn" type="submit" data-t="w_send">Send</button></div>
+      </form>
+    </details>
+    </div>
+  </section>
+</div>
 <footer data-t="footer">Built by Roots y Rutas. Everything but the job, in one place. Listings last checked Nov 19, 2026. Deadlines and pay change every cycle: confirm on the official site.</footer>
 <div class="toast" id="toast" role="status"></div>
 
@@ -3841,6 +3922,7 @@ const T = {
   default_need:["Currículum","Ensayo personal","Cartas de recomendación","Notas (transcripts)","Preparación para entrevista"]}
 };
 
+Object.assign(T.en,{"nl_strip": "<b>Get 10 new opportunities every Tuesday.</b> Free, in your inbox. No spam, and we never sell your info.", "nl_btn": "Subscribe free", "nb_title": "Never miss a <em>deadline.</em>", "nb_sub": "Every Tuesday: 10 opportunities beyond the job board, picked for first-gens, with deadlines and links. Forward it to someone who needs it.", "wk_title": "Work <em>with us</em>", "w_open": "Fill out the form →", "w_name": "Your name", "w_email": "Your email", "w_send": "Send", "w_privacy": "We only use this to review your submission and contact you about it. We never sell or share it, and you can ask us to delete it anytime by replying to any email from us.", "w_ok": "Thanks! We got it and will be in touch.", "w_err": "Something went wrong. Please try again in a minute.", "wp_title": "List your program", "wp_sub": "Run a fellowship, scholarship or program that's a good fit for first-gens? Tell us about it. Listing is free, and we review every submission before it goes live.", "wp_program": "Program name", "wp_org": "Organization", "wp_link": "Link to the program", "wp_deadline": "Next deadline (if any)", "wp_who": "Who is it for?", "wp_feat": "Tell me about featured spots when they open", "wb_title": "Feature your business", "wb_sub": "Are you a first-gen business owner or professional? We're building a directory of first-gen-owned businesses, and each week we spotlight one in the newsletter. Founding spots are free.", "wb_business": "Business or practice name", "wb_offer": "What you offer", "wb_link": "Website or Instagram", "wb_where": "City, or online", "wb_story": "Your first-gen story in one line (optional)", "wb_fg": "This business is owned by a first-gen", "wb_ok": "You can feature my business in the newsletter and on this site"});Object.assign(T.es,{"nl_strip": "<b>Recibe 10 oportunidades nuevas cada martes.</b> Gratis, en tu correo. Sin spam y nunca vendemos tu información.", "nl_btn": "Suscríbete gratis", "nb_title": "Que no se te pase <em>ninguna fecha.</em>", "nb_sub": "Cada martes: 10 oportunidades más allá de los empleos, escogidas para first-gens, con fechas y enlaces. Reenvíaselo a quien lo necesite.", "wk_title": "Trabaja <em>con nosotros</em>", "w_open": "Llena el formulario →", "w_name": "Tu nombre", "w_email": "Tu correo", "w_send": "Enviar", "w_privacy": "Solo usamos esto para revisar tu solicitud y contactarte sobre ella. Nunca la vendemos ni la compartimos, y puedes pedirnos que la borremos cuando quieras respondiendo a cualquier correo nuestro.", "w_ok": "¡Gracias! Lo recibimos y te escribiremos.", "w_err": "Algo salió mal. Inténtalo de nuevo en un minuto.", "wp_title": "Publica tu programa", "wp_sub": "¿Tienes una beca o un programa ideal para first-gens? Cuéntanos. Publicarlo es gratis, y revisamos cada solicitud antes de publicarla.", "wp_program": "Nombre del programa", "wp_org": "Organización", "wp_link": "Enlace al programa", "wp_deadline": "Próxima fecha límite (si hay)", "wp_who": "¿Para quién es?", "wp_feat": "Avísenme cuando abran espacios destacados", "wb_title": "Destaca tu negocio", "wb_sub": "¿Tienes un negocio o eres profesional first-gen? Estamos creando un directorio de negocios de first-gens, y cada semana destacamos uno en el boletín. Los primeros espacios son gratis.", "wb_business": "Nombre del negocio o práctica", "wb_offer": "Qué ofreces", "wb_link": "Página web o Instagram", "wb_where": "Ciudad, o en línea", "wb_story": "Tu historia first-gen en una línea (opcional)", "wb_fg": "El dueño o la dueña de este negocio es first-gen", "wb_ok": "Pueden destacar mi negocio en el boletín y en esta página"});
 const CATS = {"Abroad":{en:"Fellowships & teaching abroad",es:"Becas y enseñar en el extranjero"},"Domestic fellowship":{en:"U.S. fellowships",es:"Becas en EE.UU."},"Paid pathway / first job":{en:"First job",es:"Primer trabajo"},"AI & AI safety":{en:"AI & AI safety",es:"Inteligencia artificial"},"Professional development":{en:"Professional development",es:"Desarrollo profesional"},"Communities & networks":{en:"Communities & networks",es:"Comunidades y redes"},"Science & research":{en:"Science & research",es:"Ciencia e investigación"},"Grad school funding":{en:"School funding",es:"Dinero para estudiar"},"Return to work":{en:"Return to work",es:"Volver a trabajar"},"Sabbaticals & career breaks":{en:"Sabbaticals & career breaks",es:"Sabáticos y pausas"},"Live abroad & slow down":{en:"Move abroad (visas & villages)",es:"Mudarte fuera (visas y pueblos)"},"Directory (link out)":{en:"Directories",es:"Directorios"}};
 const STAGES = {"After college":{en:"Just graduated",es:"Recién graduado"},"First job":{en:"First job",es:"Primer trabajo"},"Grad school":{en:"Grad school",es:"Posgrado"},"After grad school":{en:"After grad school",es:"Después del posgrado"},"Early career":{en:"Early career",es:"Inicio de carrera"},"Early/mid career":{en:"Early or mid career",es:"Inicio o mitad de carrera"},"Mid-career":{en:"Mid-career",es:"Mitad de carrera"},"Any stage":{en:"Any stage",es:"Cualquier etapa"}};
 const STATUSES = ["interested","drafting","submitted","interview","won","no"];
@@ -4420,6 +4502,19 @@ route(); applyLang();
     renderAll();
   }catch(e){ renderAll(); }
 })();
+
+/* ---------- newsletter link + Netlify forms (added Nov 24, 2026) ---------- */
+const NEWSLETTER_URL = "https://rootsyrutas.substack.com/subscribe"; // change this one line once the Substack exists
+document.querySelectorAll("[data-news]").forEach(a => a.href = NEWSLETTER_URL);
+document.querySelectorAll("form.wform").forEach(f => f.addEventListener("submit", e => {
+  e.preventDefault();
+  const btn = f.querySelector("button[type=submit]"); btn.disabled = true;
+  fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(new FormData(f)).toString() })
+    .then(r => { if (!r.ok) throw new Error(r.status); f.reset(); f.closest("details").open = false; toast(T[lang].w_ok); })
+    .catch(() => toast(T[lang].w_err))
+    .finally(() => { btn.disabled = false; });
+}));
 </script>
 </body>
 </html>
